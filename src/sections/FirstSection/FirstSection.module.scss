@@ -72,4 +72,34 @@
   height: calc(318px + 15vw);
   background-color: $LowWhite;
   box-shadow: 0 0 24px 4px $BlackA05;
+  > img
+  {
+    width: 100%;
+    height: 50%;
+  }
+  > div
+  {
+    width: 100%;
+    height: 50%;
+  }
+}
+
+.GridCardRed
+{
+  background-color: $Red;
+}
+
+.GridCardBlue
+{
+  background-color: $Blue;
+}
+
+.GridCardGreen
+{
+  background-color: $Green;
+}
+
+.GridCardGold
+{
+  background-color: $Gold;
 }
