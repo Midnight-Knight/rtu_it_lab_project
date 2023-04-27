@@ -1,6 +1,7 @@
 $White: rgba(255,255,255,1);
 $WhiteA05: rgba(255,255,255,0.5);
 $LowWhite: rgba(222,229,235,1);
+$LowWhiteA05: rgba(222,229,235,0.5);
 $Black: rgba(0,0,0,1);
 $BlackA05: rgba(0,0,0,0.5);
 $BlackA02: rgba(0,0,0,0.2);
@@ -8,6 +9,7 @@ $BlackGray: rgba(31,31,31,1);
 $LowBlue: rgba(197,213,255,1);
 $MiddleBlue: rgb(112, 152, 255);
 $DarkBlue: rgba(46,52,66,1);
+$DarkBlueA05: rgba(46,52,66,0.5);
 
 @mixin FlexRowCenterCenter()
 {
