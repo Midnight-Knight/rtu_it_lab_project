@@ -1,0 +1,25 @@
+@import "./../../style/Color_And_Mixin";
+
+.Header
+{
+  width: 100%;
+  height: 97px;
+  background-color: $DarkBlue;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  @include FlexRowCenterCenter();
+  > div
+  {
+    padding: 32px;
+    width: calc((212px + 10vw) * 3 + (64px * 2));
+    @media (max-width: 1024px)
+    {
+      width: calc((212px + 10vw) * 2 + 64px);
+    }
+    @media (max-width: 480px) and (orientation: portrait)
+    {
+      width: calc(212px + 10vw);
+    }
+  }
+}

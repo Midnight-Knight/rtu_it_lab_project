@@ -1,0 +1,71 @@
+@import "./Color_And_Mixin";
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Floripa;
+  text-transform: uppercase;
+}
+
+html
+{
+  overflow-y: overlay;
+  scrollbar-width: auto;
+  scrollbar-color: $LowBlue rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-track{
+  background-color: rgba(0,0,0,0);
+}
+
+
+::-webkit-scrollbar-thumb {
+  width: auto;
+  background-color: $LowBlue;
+  border-radius: 2vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: $MiddleBlue;
+}
+
+::-webkit-scrollbar {
+  width: 0.75vw;
+}
+
+@font-face {
+  font-family: "Browler";
+  src: url("./../fonts/BOWLER.otf");
+}
+
+@font-face {
+  font-family: "Floripa";
+  src: url("./../fonts/Floripa.otf");
+}
+
+h5
+{
+  font-size: 24px;
+}
+
+h4
+{
+  font-size: 32px;
+}
+
+h3
+{
+  font-size: 40px;
+}
+
+h2
+{
+  font-size: 48px;
+}
+
+h1
+{
+  font-size: 56px;
+}
