@@ -1,7 +1,39 @@
 @import "./../../style/Color_And_Mixin";
 
+.Button
+{
+  padding: 24px 10px;
+}
+
 .ButtonLogo
 {
   width: 91px;
   height: 37px;
+}
+
+.ButtonFilled
+{
+  background-color: $Blue;
+}
+
+.ButtonOutlined
+{
+  background-color: rgba(0,0,0,0);
+  border: 2px solid $DarkBlue;
+}
+
+.ButtonText
+{
+  background-color: rgba(0,0,0,0);
+}
+
+.ButtonElevated
+{
+  background-color: $LowWhite;
+  box-shadow: 0 0 2px 2px $BlackA05;
+}
+
+.ButtonTonal
+{
+  background-color: $White;
 }

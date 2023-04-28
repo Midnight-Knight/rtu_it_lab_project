@@ -1,6 +1,32 @@
+.Button {
+  padding: 24px 10px;
+}
+
 .ButtonLogo {
   width: 91px;
   height: 37px;
+}
+
+.ButtonFilled {
+  background-color: rgb(102, 161, 193);
+}
+
+.ButtonOutlined {
+  background-color: rgba(0, 0, 0, 0);
+  border: 2px solid rgb(46, 52, 66);
+}
+
+.ButtonText {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.ButtonElevated {
+  background-color: rgb(222, 229, 235);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ButtonTonal {
+  background-color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=buttons.module.css.map */
