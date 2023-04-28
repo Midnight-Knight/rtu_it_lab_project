@@ -14,14 +14,6 @@
   justify-content: flex-start;
   align-items: center;
 }
-@media screen and (max-width: 480px) {
-  .FirstSection > div:nth-child(1) {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-}
 .FirstSection > div:nth-child(1):after {
   width: 100%;
   height: 100vh;
@@ -41,8 +33,19 @@
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
 }
 @media screen and (max-width: 480px) {
+  .FirstSection > div:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
   .FirstSection > div:nth-child(1) > h1 {
-    margin-left: auto;
+    position: relative;
+    margin-left: 0;
+    width: 85%;
+    bottom: 11vh;
+    text-align: left;
+    overflow: hidden;
   }
 }
 .FirstSection > div:nth-child(2) {

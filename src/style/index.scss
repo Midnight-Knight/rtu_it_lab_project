@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: Arial;
   font-size: 14px;
-  overflow: hidden;
 }
 
 html
@@ -72,6 +71,10 @@ h2
 h1
 {
   font-size: 48px;
+  @media screen and (max-width: 480px)
+  {
+    font-size: 32px;
+  }
 }
 
 button, button:active, button:focus {

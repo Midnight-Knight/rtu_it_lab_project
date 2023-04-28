@@ -10,7 +10,7 @@ export const MainSection = () => {
     return (
         <section className={Style.FirstSection}>
             <div>
-                <h1>Добро пожаловать на сайт мероприятий города Москвы!</h1>
+                <h1>Добро пожаловать на сайт мероприятий Москвы!</h1>
             </div>
             <div>
 

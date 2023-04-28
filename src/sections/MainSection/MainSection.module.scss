@@ -16,10 +16,6 @@
       background-repeat: no-repeat;
       @include FlexRowStartCenter();
 
-      @media screen and (max-width: 480px){
-       @include FlexRowCenterCenter();
-      }
-
       > &:after
       {
         width: 100%;
@@ -29,11 +25,13 @@
         background-color: $BlackBlackout;
       }
 
-      > * {
+      > *
+      {
         z-index: 1;
         color: $White;
         text-shadow: 2px 2px 4px $BlackA05;
       }
+
 
       > h1
       {
@@ -41,9 +39,19 @@
         margin-left: 14%;
         width: 640px;
         text-shadow: 2px 2px 2px $BlackA05;
+      }
 
-        @media screen and (max-width: 480px){
-          margin-left: auto;
+      @media screen and (max-width: 480px)
+      {
+        @include FlexColumnEndCenter();
+        > h1
+        {
+          position: relative;
+          margin-left: 0;
+          width: 85%;
+          bottom: 11vh;
+          text-align: left;
+          overflow: hidden;
         }
       }
     }
