@@ -10,6 +10,21 @@ export const ButtonLogo = (props) => {
     )
 }
 
+export const ButtonLogoMobile = (props) => {
+    return (
+        <button className={classNames(Style.ButtonMobile,Style.ButtonLogo)} onClick={props.func}>
+            <h3>MyMoscowEvents</h3>
+        </button>
+    )
+}
+
+export const ButtonNav = (props) => {
+    return (
+        <button className={classNames(Style.Button, Style.ButtonNav)} onClick={props.func}>
+        </button>
+    )
+}
+
 export const ButtonFilled = (props) => {
     return (
         <button className={classNames(Style.Button, Style.ButtonFilled)} onClick={props.func}>

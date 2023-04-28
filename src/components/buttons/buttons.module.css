@@ -2,9 +2,23 @@
   padding: 10px 24px;
 }
 
+.ButtonMobile {
+  padding: 10px 0px;
+}
+
 .ButtonLogo {
   background-color: rgba(0, 0, 0, 0);
   color: rgb(255, 255, 255);
+}
+
+.ButtonNav {
+  background-image: url("./../../image/view_headline.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .ButtonFilled {

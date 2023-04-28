@@ -16,6 +16,10 @@
       background-repeat: no-repeat;
       @include FlexRowStartCenter();
 
+      @media screen and (max-width: 480px){
+       @include FlexRowCenterCenter();
+      }
+
       > &:after
       {
         width: 100%;
@@ -37,6 +41,10 @@
         margin-left: 14%;
         width: 640px;
         text-shadow: 2px 2px 2px $BlackA05;
+
+        @media screen and (max-width: 480px){
+          margin-left: auto;
+        }
       }
     }
     > &:nth-child(2)
