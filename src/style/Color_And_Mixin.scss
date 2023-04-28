@@ -4,7 +4,7 @@ $LowWhite: rgba(222,229,235,1);
 $LowWhiteA05: rgba(222,229,235,0.5);
 $Black: rgba(0,0,0,1);
 $BlackA05: rgba(0,0,0,0.5);
-$BlackA02: rgba(0,0,0,0.2);
+$BlackBlackout: rgba(0,0,0,0.4);
 $BlackGray: rgba(31,31,31,1);
 $LowBlue: rgba(197,213,255,1);
 $MiddleBlue: rgb(112, 152, 255);
@@ -14,6 +14,14 @@ $Red: rgba(184,52,61,1);
 $Blue: rgba(102,161,193,1);
 $Green: rgba(129,182,134,1);
 $Gold: rgba(216,175,90,1);
+
+@mixin FlexRowStartCenter()
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
 
 @mixin FlexRowCenterCenter()
 {

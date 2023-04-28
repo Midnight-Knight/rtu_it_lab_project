@@ -4,6 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial;
   font-size: 14px;
 }
 
@@ -22,7 +23,6 @@ html
 ::-webkit-scrollbar-thumb {
   width: auto;
   background-color: $LowBlue;
-  border-radius: 2vw;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -70,7 +70,7 @@ h2
 
 h1
 {
-  font-size: 40px;
+  font-size: 48px;
 }
 
 button, button:active, button:focus {

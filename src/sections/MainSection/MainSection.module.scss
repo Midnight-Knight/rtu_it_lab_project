@@ -7,12 +7,14 @@
     width: 100%;
     > &:nth-child(1)
     {
+      background-color: $LowWhite;
+      width: 100%;
       height: 100vh;
       background-image: url("./../../image/Moscow.jpg");
-      background-position: center;
+      background-position: left;
       background-size: cover;
       background-repeat: no-repeat;
-      @include FlexRowCenterCenter();
+      @include FlexRowStartCenter();
 
       > &:after
       {
@@ -20,7 +22,7 @@
         height: 100vh;
         position: absolute;
         content: "";
-        background-color: $BlackA02;
+        background-color: $BlackBlackout;
       }
 
       > * {
@@ -28,6 +30,18 @@
         color: $White;
         text-shadow: 2px 2px 4px $BlackA05;
       }
+
+      > h1
+      {
+        text-transform: uppercase;
+        margin-left: 14%;
+        width: 640px;
+        text-shadow: 2px 2px 2px $BlackA05;
+      }
+    }
+    > &:nth-child(2)
+    {
+      height: 100vh;
     }
   }
 }

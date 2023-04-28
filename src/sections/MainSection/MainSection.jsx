@@ -9,7 +9,12 @@ import Style from "./MainSection.module.css";
 export const MainSection = () => {
     return (
         <section className={Style.FirstSection}>
-            <div></div>
+            <div>
+                <h1>Добро пожаловать на сайт мероприятий города Москвы!</h1>
+            </div>
+            <div>
+
+            </div>
         </section>
     )
 }
