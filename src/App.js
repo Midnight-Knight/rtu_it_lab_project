@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import "./style/App.css";
 import {Header} from "./components/header/header";
-import {FirstSection} from "./sections/FirstSection/FirstSection";
+import {MainSection} from "./sections/MainSection/MainSection";
 import axios from "axios";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-        <FirstSection/>
+        <MainSection/>
     </div>
   );
 }

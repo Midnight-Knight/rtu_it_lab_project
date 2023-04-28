@@ -11,19 +11,5 @@
   justify-content: center;
   align-items: center;
 }
-.Header > div {
-  padding: 32px;
-  width: calc((212px + 10vw) * 3 + 128px);
-}
-@media (max-width: 1024px) {
-  .Header > div {
-    width: calc((212px + 10vw) * 2 + 64px);
-  }
-}
-@media (max-width: 480px) and (orientation: portrait) {
-  .Header > div {
-    width: calc(212px + 10vw);
-  }
-}
 
 /*# sourceMappingURL=header.module.css.map */

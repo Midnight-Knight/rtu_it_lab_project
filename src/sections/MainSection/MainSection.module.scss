@@ -1,0 +1,34 @@
+@import "./../../style/Color_And_Mixin";
+
+.FirstSection
+{
+  > div
+  {
+    width: 100%;
+    > &:nth-child(1)
+    {
+      height: 100vh;
+      background-image: url("./../../image/Moscow.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      @include FlexRowCenterCenter();
+
+      > &:after
+      {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        content: "";
+        background-color: $BlackA02;
+      }
+
+      > * {
+        z-index: 1;
+        color: $White;
+        text-shadow: 2px 2px 4px $BlackA05;
+      }
+    }
+  }
+}
+
