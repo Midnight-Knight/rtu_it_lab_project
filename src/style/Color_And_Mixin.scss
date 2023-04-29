@@ -71,6 +71,14 @@ $Gold: rgba(216,175,90,1);
   align-items: center;
 }
 
+@mixin FlexColumnCenterStart()
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
 @mixin FlexColumnEndCenter()
 {
   display: flex;

@@ -2,5 +2,10 @@
   background-color: rgb(222, 229, 235);
   width: 100%;
 }
+@media screen and (max-width: 320px) {
+  .App {
+    width: 320px;
+  }
+}
 
 /*# sourceMappingURL=App.css.map */

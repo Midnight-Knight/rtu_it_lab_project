@@ -13,7 +13,7 @@ export const ButtonLogo = (props) => {
 export const ButtonLogoMobile = (props) => {
     return (
         <button className={classNames(Style.ButtonMobile,Style.ButtonLogo)} onClick={props.func}>
-            <h3>MyMoscowEvents</h3>
+            <h3>MyMosEvents</h3>
         </button>
     )
 }
@@ -45,6 +45,14 @@ export const ButtonText = (props) => {
     return (
         <button className={classNames(Style.Button, Style.ButtonText)} onClick={props.func}>
             <h6>{props.text}</h6>
+        </button>
+    )
+}
+
+export const ButtonTextH4 = (props) => {
+    return (
+        <button className={classNames(Style.Button, Style.ButtonText)} onClick={props.func}>
+            <h4>{props.text}</h4>
         </button>
     )
 }

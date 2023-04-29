@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Style from "./header.module.css";
-import {ButtonLogo, ButtonLogoMobile, ButtonNav, ButtonText} from "../buttons/buttons";
+import {ButtonLogo, ButtonLogoMobile, ButtonNav, ButtonText, ButtonTextH4} from "../buttons/buttons";
 import classNames from "classnames";
 
 export const Header = () => {
@@ -14,7 +14,6 @@ export const Header = () => {
 
     const PositionY = () => {
       SetHeaderPositionY(window.scrollY);
-      console.log(window.scrollY);
     };
 
     useEffect(() => {
@@ -32,17 +31,17 @@ export const Header = () => {
     {
         return (
             <>
-                <header className={classNames(Style.HeaderMobile,HeaderPositionY === 0 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite)}>
+                <header className={classNames(Style.HeaderMobile,NavButtonClick === true ? Style.HeaderBackgroundDark : (HeaderPositionY === 0 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite))}>
                     <ButtonLogoMobile func={null}/>
                     <ButtonNav func={() => SetNavButtonClick(!NavButtonClick)}/>
                 </header>
                 <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
                     <div>
-                        <ButtonText text={"Культура"} func={null}/>
-                        <ButtonText text={"Образование"} func={null}/>
-                        <ButtonText text={"Доступная среда"} func={null}/>
-                        <ButtonText text={"Благоустройство"} func={null}/>
-                        <ButtonText text={"Кабинет"} func={null}/>
+                        <ButtonTextH4 text={"Культура"} func={null}/>
+                        <ButtonTextH4 text={"Образование"} func={null}/>
+                        <ButtonTextH4 text={"Доступная среда"} func={null}/>
+                        <ButtonTextH4 text={"Благоустройство"} func={null}/>
+                        <ButtonTextH4 text={"Кабинет"} func={null}/>
                     </div>
                 </nav>
             </>

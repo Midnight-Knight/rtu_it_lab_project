@@ -6,25 +6,35 @@
   {
     padding: 92px 0px;
     width: 100%;
+    > *
+    {
+      padding: 0 74px;
+    }
+
+    @media screen and (max-width: 480px){
+      > *
+      {
+        padding: 0px 16px;
+      }
+    }
+
     > &:nth-child(1)
     {
       background-color: $Black;
       width: 100%;
       padding-top: 368px;
-      @include FlexRowStartCenter();
+      gap: 30px;
+      @include FlexColumnCenterStart();
 
       > *
       {
         color: $White;
       }
 
-
       > h1
       {
         text-transform: uppercase;
-        margin-left: 14%;
-        width: 640px;
-        text-shadow: 2px 2px 2px $BlackA05;
+        max-width: 792px;
       }
 
       @media screen and (max-width: 480px)
@@ -32,11 +42,8 @@
         @include FlexColumnCenterCenter();
         > h1
         {
-          position: relative;
-          margin-left: 0;
-          width: 85%;
+          width: auto;
           text-align: left;
-          overflow: hidden;
         }
       }
     }

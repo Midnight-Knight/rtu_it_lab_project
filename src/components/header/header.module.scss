@@ -7,7 +7,7 @@
   height: auto;
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 10;
   transition: 0.5s background-color;
   @include FlexRowBetweenCenter();
 
@@ -32,7 +32,7 @@
   height: auto;
   position: fixed;
   top: 0;
-  z-index: 9;
+  z-index: 10;
   @include FlexRowBetweenCenter();
   transition: 0.5s background-color;
 
@@ -43,6 +43,19 @@
   > button:last-child
   {
     transition: 0.5s filter;
+  }
+}
+
+.HeaderBackgroundDark
+{
+  background-color: rgba(0,0,0,1);
+  *
+  {
+    color: $White;
+  }
+  > button:last-child
+  {
+    filter: invert(0%);
   }
 }
 
@@ -77,36 +90,42 @@
   position: fixed;
   top: 0;
   z-index: 9;
-  @include FlexRowEndCenter();
+  @include FlexRowStartCenter();
   width: 100vw;
   height: 100vh;
-  transition: 0.5s background-color;
+  background-color: rgba(0,0,0,1);
+  transition: 0.5s opacity;
   > div
   {
     position: fixed;
-    width: auto;
-    padding-top: 80px;
+    width: 100%;
     height: 100%;
-    @include FlexColumnStartCenter();
-    background-color: $DarkBlue;
-    transition: 0.5s right;
+    @include FlexColumnCenterStart();
   }
 }
 
 .NavTrueClick
 {
-  background-color: $BlackA05;
+  opacity: 1;
   right: 0;
-  > div {
-    right: 0;
-  }
 }
 
 .NavFalseClick
 {
-  background-color: rgba(0,0,0,0);
-  right: -100%;
-  > div
+  opacity: 0;
+  animation: animationRightTimer 0.51s;
+}
+
+@keyframes animationRightTimer {
+  from
+  {
+    right: 0;
+  }
+  99%
+  {
+    right: 0;
+  }
+  to
   {
     right: -100%;
   }

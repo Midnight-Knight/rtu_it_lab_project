@@ -4,5 +4,8 @@
 {
   background-color: $LowWhite;
   width: 100%;
+  @media screen and (max-width: 320px){
+    width: 320px;
+  }
 }
 
