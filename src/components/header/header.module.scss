@@ -61,7 +61,7 @@
 
 .HeaderBackgroundBlack
 {
-  background-color: $Black;
+  background-color: rgba(0,0,0,0);
   *
   {
     color: $White;
@@ -91,8 +91,8 @@
   top: 0;
   z-index: 9;
   @include FlexRowStartCenter();
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0,0,0,1);
   transition: 0.5s opacity;
   > div
@@ -107,26 +107,26 @@
 .NavTrueClick
 {
   opacity: 1;
-  right: 0;
+  left: 0;
 }
 
 .NavFalseClick
 {
   opacity: 0;
-  animation: animationRightTimer 0.51s;
+  animation: animationLeftTimer 0.51s;
 }
 
-@keyframes animationRightTimer {
+@keyframes animationLeftTimer {
   from
   {
-    right: 0;
+    left: 0;
   }
   99%
   {
-    right: 0;
+    left: 0;
   }
   to
   {
-    right: -100%;
+    left: -100%;
   }
 }
