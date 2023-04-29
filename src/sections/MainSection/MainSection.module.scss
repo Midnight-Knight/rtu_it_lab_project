@@ -4,32 +4,18 @@
 {
   > div
   {
+    padding: 92px 0px;
     width: 100%;
     > &:nth-child(1)
     {
-      background-color: $LowWhite;
+      background-color: $Black;
       width: 100%;
-      height: 100vh;
-      background-image: url("./../../image/Moscow.jpg");
-      background-position: left;
-      background-size: cover;
-      background-repeat: no-repeat;
+      padding-top: 368px;
       @include FlexRowStartCenter();
-
-      > &:after
-      {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        content: "";
-        background-color: $BlackBlackout;
-      }
 
       > *
       {
-        z-index: 1;
         color: $White;
-        text-shadow: 2px 2px 4px $BlackA05;
       }
 
 
@@ -43,13 +29,12 @@
 
       @media screen and (max-width: 480px)
       {
-        @include FlexColumnEndCenter();
+        @include FlexColumnCenterCenter();
         > h1
         {
           position: relative;
           margin-left: 0;
           width: 85%;
-          bottom: 11vh;
           text-align: left;
           overflow: hidden;
         }

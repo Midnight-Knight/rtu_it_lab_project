@@ -6,15 +6,23 @@ import classNames from "classnames";
 export const Header = () => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [NavButtonClick, SetNavButtonClick] = useState(false);
+    const [HeaderPositionY, SetHeaderPositionY] = useState(window.scrollY);
 
     const handleResize = () => {
         setScreenWidth(window.innerWidth);
     };
 
+    const PositionY = () => {
+      SetHeaderPositionY(window.scrollY);
+      console.log(window.scrollY);
+    };
+
     useEffect(() => {
         window.addEventListener('resize', handleResize);
+        window.addEventListener('scroll', PositionY);
         return () => {
             window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', PositionY);
         };
     }, []);
 
@@ -24,7 +32,7 @@ export const Header = () => {
     {
         return (
             <>
-                <header className={Style.HeaderMobile}>
+                <header className={classNames(Style.HeaderMobile,HeaderPositionY === 0 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite)}>
                     <ButtonLogoMobile func={null}/>
                     <ButtonNav func={() => SetNavButtonClick(!NavButtonClick)}/>
                 </header>
@@ -43,7 +51,7 @@ export const Header = () => {
     else
     {
         return (
-            <header className={Style.HeaderDesktop}>
+            <header className={classNames(Style.HeaderDesktop,HeaderPositionY === 0 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite)}>
                 <ButtonLogo func={null}/>
                 <nav>
                     <ButtonText text={"Культура"} func={null}/>

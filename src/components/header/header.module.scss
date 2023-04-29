@@ -3,14 +3,19 @@
 .HeaderDesktop
 {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 20px 32px;
   height: auto;
-  background-color: $DarkBlue;
   position: fixed;
   top: 0;
-  z-index: 10;
-  @include FlexRowEvenlyCenter();
+  z-index: 9;
+  transition: 0.5s background-color;
+  @include FlexRowBetweenCenter();
+
+  *
+  {
+    transition: 0.5s color;
+  }
+
   > nav
   {
     width: auto;
@@ -22,15 +27,49 @@
 .HeaderMobile
 {
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 92px;
+  padding: 20px 32px;
   height: auto;
-  box-shadow: 0 0 24px 8px $BlackA05;
-  background-color: $DarkBlue;
   position: fixed;
   top: 0;
-  z-index: 10;
-  @include FlexRowAroundCenter();
+  z-index: 9;
+  @include FlexRowBetweenCenter();
+  transition: 0.5s background-color;
+
+  *
+  {
+    transition: 0.5s color;
+  }
+  > button:last-child
+  {
+    transition: 0.5s filter;
+  }
+}
+
+.HeaderBackgroundBlack
+{
+  background-color: $Black;
+  *
+  {
+    color: $White;
+  }
+  > button:last-child
+  {
+    filter: invert(0%);
+  }
+}
+
+.HeaderBackgroundWhite
+{
+  background-color: $White;
+  *
+  {
+    color: $Black;
+  }
+  > button:last-child
+  {
+    filter: invert(100%);
+  }
 }
 
 .Nav
