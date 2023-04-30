@@ -6,6 +6,7 @@
   {
     padding: 92px 0px;
     width: 100%;
+    gap: 30px;
     > *
     {
       padding: 0 74px;
@@ -25,8 +26,8 @@
       background-size: cover;
       background-position: left;
       width: 100%;
+      min-height: 100vh;
       padding-top: 368px;
-      gap: 30px;
       @include FlexColumnCenterStart();
       >&:after
       {
@@ -62,8 +63,52 @@
     }
     > &:nth-child(2)
     {
-      height: 100vh;
+      background-color: $White;
+      @include FlexColumnStartStart();
     }
+    > &:nth-child(3)
+    {
+      background-color: $Black;
+      @include FlexColumnStartStart();
+    }
+  }
+}
+
+.GridDiv
+{
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 56px;
+  
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.GridCard
+{
+    width: auto;
+    height: auto;
+    @include FlexColumnStartCenter();
+    > img
+    {
+      width: 100%;
+      height: auto;
+      margin-bottom: 24px;
+      border-radius: 16px;
+    }
+  > h4
+  {
+    width: 100%;
   }
 }
 

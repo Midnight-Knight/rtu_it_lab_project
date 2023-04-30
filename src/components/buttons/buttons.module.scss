@@ -13,8 +13,13 @@
 
 .ButtonLogo
 {
+  background-image: url("./../../image/moscow-svgrepo-com.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
   background-color: rgba(0,0,0,0);
-  color: $White;
 }
 
 .ButtonNav

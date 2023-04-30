@@ -5,7 +5,6 @@ import classNames from "classnames";
 export const ButtonLogo = (props) => {
     return (
         <button className={classNames(Style.Button, Style.ButtonLogo)} onClick={props.func}>
-            <h3>MyMoscowEvents</h3>
         </button>
     )
 }
@@ -13,7 +12,6 @@ export const ButtonLogo = (props) => {
 export const ButtonLogoMobile = (props) => {
     return (
         <button className={classNames(Style.ButtonMobile,Style.ButtonLogo)} onClick={props.func}>
-            <h3>MyMosEvents</h3>
         </button>
     )
 }

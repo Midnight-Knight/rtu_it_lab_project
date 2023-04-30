@@ -9,7 +9,7 @@ function App() {
         async function API()
         {
             try {
-                const response = await axios.get("https://apidata.mos.ru/v1/datasets/61121?api_key=b7546afced8886fa3b41debca1e78a84");
+                const response = await axios.get("https://apidata.mos.ru/v1/datasets/3295?api_key=b7546afced8886fa3b41debca1e78a84");
                 const JsonData = await response.data;
                 console.log(JsonData);
             }

@@ -27,7 +27,7 @@ export const Header = () => {
 
 
 
-    if (screenWidth <= 1045)
+    if (screenWidth < 1024)
     {
         return (
             <>
@@ -36,13 +36,12 @@ export const Header = () => {
                     <ButtonNav func={() => SetNavButtonClick(!NavButtonClick)}/>
                 </header>
                 <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
-                    <div>
-                        <ButtonTextH4 text={"Культура"} func={null}/>
-                        <ButtonTextH4 text={"Образование"} func={null}/>
-                        <ButtonTextH4 text={"Доступная среда"} func={null}/>
-                        <ButtonTextH4 text={"Благоустройство"} func={null}/>
-                        <ButtonTextH4 text={"Кабинет"} func={null}/>
-                    </div>
+                    <ButtonTextH4 text={"Культура"} func={null}/>
+                    <ButtonTextH4 text={"Образование"} func={null}/>
+                    <ButtonTextH4 text={"Туризм"} func={null}/>
+                    <ButtonTextH4 text={"Спорт"} func={null}/>
+                    <ButtonTextH4 text={"Торжественные открытия"} func={null}/>
+                    <ButtonTextH4 text={"Кабинет"} func={null}/>
                 </nav>
             </>
         )
@@ -55,8 +54,9 @@ export const Header = () => {
                 <nav>
                     <ButtonText text={"Культура"} func={null}/>
                     <ButtonText text={"Образование"} func={null}/>
-                    <ButtonText text={"Доступная среда"} func={null}/>
-                    <ButtonText text={"Благоустройство"} func={null}/>
+                    <ButtonText text={"Туризм"} func={null}/>
+                    <ButtonText text={"Спорт"} func={null}/>
+                    <ButtonText text={"Торжественные открытия"} func={null}/>
                     <ButtonText text={"Кабинет"} func={null}/>
                 </nav>
             </header>

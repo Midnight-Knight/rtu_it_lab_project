@@ -1,6 +1,7 @@
 .FirstSection > div {
   padding: 92px 0px;
   width: 100%;
+  gap: 30px;
 }
 .FirstSection > div > * {
   padding: 0 74px;
@@ -16,8 +17,8 @@
   background-size: cover;
   background-position: left;
   width: 100%;
+  min-height: 100vh;
   padding-top: 368px;
-  gap: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -53,7 +54,57 @@
   }
 }
 .FirstSection > div:nth-child(2) {
-  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.FirstSection > div:nth-child(3) {
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.GridDiv {
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 56px;
+}
+@media screen and (max-width: 1280px) {
+  .GridDiv {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .GridDiv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.GridCard {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.GridCard > img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+  border-radius: 16px;
+}
+.GridCard > h4 {
+  width: 100%;
 }
 
 /*# sourceMappingURL=MainSection.module.css.map */
