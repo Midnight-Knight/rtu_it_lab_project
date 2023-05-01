@@ -1,0 +1,40 @@
+.GridDiv {
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 56px;
+}
+@media screen and (max-width: 1280px) {
+  .GridDiv {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+}
+@media screen and (max-width: 768px) {
+  .GridDiv {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.GridCard {
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.GridCard > img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
+  border-radius: 16px;
+}
+.GridCard > h4 {
+  width: 100%;
+}
+
+/*# sourceMappingURL=Cards.module.css.map */

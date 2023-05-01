@@ -1,0 +1,39 @@
+@import "./../../style/Color_And_Mixin";
+
+.GridDiv
+{
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 56px;
+
+  @media screen and (max-width: 1280px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: 768px){
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+.GridCard
+{
+  width: auto;
+  height: auto;
+  @include FlexColumnStartCenter();
+  > img
+  {
+    width: 100%;
+    height: auto;
+    margin-bottom: 24px;
+    border-radius: 16px;
+  }
+  > h4
+  {
+    width: 100%;
+  }
+}
