@@ -11,7 +11,7 @@ export const Footer = () => {
                     Студент 2 курса, РТУ МИРЭА, Факультет: ИИТ, Направление: Программная инженерия, Профиль: Разработка и дизайн
                     компьютерных игр и мультимедийных приложений.
                 </h5>
-                <h5>GitHub: <a target="_blank" href="https://github.com/Midnight-Knight">https://github.com/Midnight-Knight</a></h5>
+                <h5>GitHub: <a target="_blank" rel="noreferrer" href="https://github.com/Midnight-Knight">https://github.com/Midnight-Knight</a></h5>
             </div>
             <div>
                 <h5>

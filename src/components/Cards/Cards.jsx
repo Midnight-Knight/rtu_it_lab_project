@@ -11,27 +11,27 @@ export const Category = () => {
     return (
         <div className={Style.GridDiv}>
             <div className={Style.GridCard}>
-                <img src={photo1}/>
+                <img alt="" src={photo1}/>
                 <h4>Мероприятия, организованные при поддержке Департамента культуры города Москвы</h4>
             </div>
             <div className={Style.GridCard}>
-                <img src={photo2}/>
+                <img alt="" src={photo2}/>
                 <h4>Образовательных мероприятий Учебного центра Мосгосэкспертизы</h4>
             </div>
             <div className={Style.GridCard}>
-                <img src={photo3}/>
+                <img alt="" src={photo3}/>
                 <h4>Туристский событийный календарь города Москвы</h4>
             </div>
             <div className={Style.GridCard}>
-                <img src={Sport}/>
+                <img alt="" src={Sport}/>
                 <h4>Перечень спортивных мероприятий</h4>
             </div>
             <div className={Style.GridCard}>
-                <img src={building}/>
+                <img alt="" src={building}/>
                 <h4>Торжественные мероприятия в честь завершения строительства или реставрации общественных объектов</h4>
             </div>
             <div className={Style.GridCard}>
-                <img src={calendar}/>
+                <img alt="" src={calendar}/>
                 <h4>Личный кабинет</h4>
             </div>
         </div>
