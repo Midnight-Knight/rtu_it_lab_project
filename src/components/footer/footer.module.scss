@@ -1,0 +1,60 @@
+@import "./../../style/Color_And_Mixin";
+
+.Footer
+{
+  padding: 92px 74px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "Info1 Info1"
+                        "Info2 Info3";
+  justify-content: space-between;
+  align-content: space-between;
+  grid-gap: 56px;
+  background-color: $White;
+
+  @media screen and (max-width: 480px){
+    padding: 92px 16px;
+  }
+
+  @media screen and (max-width: 768px) {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas: "Info1"
+                          "Info2"
+                          "Info3";
+  }
+
+  > div
+  {
+    gap: 20px;
+    @include FlexColumnStartStart();
+    > *
+    {
+      text-align: left;
+      color: $Black
+    }
+    a
+    {
+      font-size: 24px;
+      @media screen and (max-width: 480px)
+      {
+        font-size: 20px;
+      }
+    }
+    &:nth-child(1)
+    {
+      grid-area: Info1;
+    }
+    &:nth-child(2)
+    {
+      grid-area: Info2;
+    }
+    &:nth-child(3)
+    {
+      grid-area: Info3;
+    }
+  }
+}

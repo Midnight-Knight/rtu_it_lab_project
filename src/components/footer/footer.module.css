@@ -1,0 +1,55 @@
+.Footer {
+  padding: 92px 74px;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "Info1 Info1" "Info2 Info3";
+  justify-content: space-between;
+  align-content: space-between;
+  grid-gap: 56px;
+  background-color: rgb(255, 255, 255);
+}
+@media screen and (max-width: 480px) {
+  .Footer {
+    padding: 92px 16px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Footer {
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-areas: "Info1" "Info2" "Info3";
+  }
+}
+.Footer > div {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.Footer > div > * {
+  text-align: left;
+  color: rgb(14, 14, 14);
+}
+.Footer > div a {
+  font-size: 24px;
+}
+@media screen and (max-width: 480px) {
+  .Footer > div a {
+    font-size: 20px;
+  }
+}
+.Footer > div:nth-child(1) {
+  grid-area: Info1;
+}
+.Footer > div:nth-child(2) {
+  grid-area: Info2;
+}
+.Footer > div:nth-child(3) {
+  grid-area: Info3;
+}
+
+/*# sourceMappingURL=footer.module.css.map */
