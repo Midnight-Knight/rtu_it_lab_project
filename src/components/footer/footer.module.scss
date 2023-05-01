@@ -33,15 +33,15 @@
     @include FlexColumnStartStart();
     > *
     {
-      text-align: left;
+      text-align: justify;
       color: $Black
     }
     a
     {
-      font-size: 24px;
+      font-size: 20px;
       @media screen and (max-width: 480px)
       {
-        font-size: 20px;
+        font-size: 18px;
       }
     }
     &:nth-child(1)

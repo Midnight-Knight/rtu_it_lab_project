@@ -31,15 +31,15 @@
   align-items: flex-start;
 }
 .Footer > div > * {
-  text-align: left;
+  text-align: justify;
   color: rgb(14, 14, 14);
 }
 .Footer > div a {
-  font-size: 24px;
+  font-size: 20px;
 }
 @media screen and (max-width: 480px) {
   .Footer > div a {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 .Footer > div:nth-child(1) {
