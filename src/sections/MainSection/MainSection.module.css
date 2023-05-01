@@ -84,7 +84,36 @@
   background-image: url("./../../image/Broadcast.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: center;
+}
+@media screen and (max-width: 480px) {
+  .FirstSection > div:nth-child(4) > div {
+    height: 50vh;
+  }
+}
+.FirstSection > div:nth-child(5) {
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.FirstSection > div:nth-child(5) * {
+  color: rgb(255, 255, 255);
+}
+.FirstSection > div:nth-child(5) > div {
+  width: 100%;
+  height: 65vh;
+  border-radius: 16px;
+  background-image: url("./../../image/SMS.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top right;
+}
+@media screen and (max-width: 480px) {
+  .FirstSection > div:nth-child(5) > div {
+    height: 50vh;
+  }
 }
 
 /*# sourceMappingURL=MainSection.module.css.map */
