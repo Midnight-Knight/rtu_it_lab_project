@@ -6,9 +6,12 @@ import photo2 from "./../../image/photo2.png";
 import photo3 from "./../../image/photo3.png";
 import Sport from "./../../image/sport.png";
 import calendar from "./../../image/calendary.png";
-import building from "./../../image/building.png"
+import building from "./../../image/building.png";
+import {MyMap} from "../../components/MyMap/MyMap";
 
 export const MainSection = () => {
+
+
     return (
         <section className={Style.FirstSection}>
             <div>
@@ -46,6 +49,10 @@ export const MainSection = () => {
                         <h4>Личный кабинет</h4>
                     </div>
                 </div>
+            </div>
+            <div>
+                <h1>Интерактивная карта мероприятий</h1>
+                <MyMap/>
             </div>
         </section>
     )

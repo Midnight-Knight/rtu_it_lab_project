@@ -4,19 +4,12 @@
 {
   > div
   {
-    padding: 92px 0px;
+    padding: 92px 74px;
     width: 100%;
     gap: 30px;
-    > *
-    {
-      padding: 0 74px;
-    }
 
     @media screen and (max-width: 480px){
-      > *
-      {
-        padding: 0px 16px;
-      }
+      padding: 92px 16px;
     }
 
     > &:nth-child(1)
@@ -70,6 +63,10 @@
     {
       background-color: $Black;
       @include FlexColumnStartStart();
+      > h1
+      {
+        color: $White;
+      }
     }
   }
 }
@@ -111,4 +108,14 @@
     width: 100%;
   }
 }
+
+.InteractiveMap
+{
+  width: 100%;
+  height: 70vh;
+  background-color: $White;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
 

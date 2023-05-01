@@ -1,0 +1,10 @@
+@import "./../../style/Color_And_Mixin";
+
+.InteractiveMap
+{
+  width: 100%;
+  height: 70vh;
+  background-color: $White;
+  border-radius: 16px;
+  overflow: hidden;
+}

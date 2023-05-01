@@ -10,10 +10,10 @@ $LowBlue: rgba(197,213,255,1);
 $MiddleBlue: rgb(112, 152, 255);
 $DarkBlue: rgba(46,52,66,1);
 $DarkBlueA05: rgba(46,52,66,0.5);
-$Red: rgba(184,52,61,1);
+$Red: rgba(224,27,27,1);
 $Blue: rgba(102,161,193,1);
 $Green: rgba(129,182,134,1);
-$Gold: rgba(216,175,90,1);
+$Yellow: rgba(216,175,90,1);
 
 @mixin FlexRowStartCenter()
 {
@@ -71,6 +71,14 @@ $Gold: rgba(216,175,90,1);
   align-items: center;
 }
 
+@mixin FlexColumnReverseStartCenter()
+{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 @mixin FlexColumnStartStart()
 {
   display: flex;
@@ -84,7 +92,7 @@ $Gold: rgba(216,175,90,1);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 }
 
 @mixin FlexColumnEndCenter()
