@@ -47,7 +47,7 @@
   {
     transition: 0.5s color;
   }
-  > button:last-child, > button:first-child
+  > button, > a
   {
     transition: 0.5s filter;
   }
@@ -60,7 +60,7 @@
   {
     color: $White;
   }
-  > button:last-child, > button:first-child
+  > button, > a
   {
     filter: invert(0%);
   }
@@ -73,7 +73,7 @@
   {
     color: $White;
   }
-  > button:last-child, > button:first-child
+  > button, > a
   {
     filter: invert(0%);
   }
@@ -86,7 +86,7 @@
   {
     color: $Black;
   }
-  > button:last-child, > button:first-child
+  > button, > a
   {
     filter: invert(100%);
   }

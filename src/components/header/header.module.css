@@ -50,7 +50,7 @@
 .HeaderMobile * {
   transition: 0.5s color;
 }
-.HeaderMobile > button:last-child, .HeaderMobile > button:first-child {
+.HeaderMobile > button, .HeaderMobile > a {
   transition: 0.5s filter;
 }
 
@@ -60,7 +60,7 @@
 .HeaderBackgroundDark * {
   color: rgb(255, 255, 255);
 }
-.HeaderBackgroundDark > button:last-child, .HeaderBackgroundDark > button:first-child {
+.HeaderBackgroundDark > button, .HeaderBackgroundDark > a {
   filter: invert(0%);
 }
 
@@ -70,7 +70,7 @@
 .HeaderBackgroundBlack * {
   color: rgb(255, 255, 255);
 }
-.HeaderBackgroundBlack > button:last-child, .HeaderBackgroundBlack > button:first-child {
+.HeaderBackgroundBlack > button, .HeaderBackgroundBlack > a {
   filter: invert(0%);
 }
 
@@ -80,7 +80,7 @@
 .HeaderBackgroundWhite * {
   color: rgb(14, 14, 14);
 }
-.HeaderBackgroundWhite > button:last-child, .HeaderBackgroundWhite > button:first-child {
+.HeaderBackgroundWhite > button, .HeaderBackgroundWhite > a {
   filter: invert(100%);
 }
 

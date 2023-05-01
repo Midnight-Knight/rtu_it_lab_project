@@ -2,24 +2,40 @@ import React from "react";
 import Style from "./buttons.module.css";
 import classNames from "classnames";
 
-export const ButtonLogo = (props) => {
+export const ButtonLogo = () => {
     return (
-        <button className={classNames(Style.Button, Style.ButtonLogo)} onClick={props.func}>
-        </button>
+        <a className={classNames(Style.Button, Style.ButtonLogo)} href="/">
+        </a>
     )
 }
 
-export const ButtonLogoMobile = (props) => {
+export const ButtonLogoMobile = () => {
     return (
-        <button className={classNames(Style.ButtonMobile,Style.ButtonLogo)} onClick={props.func}>
+        <a className={classNames(Style.ButtonMobile,Style.ButtonLogo)} href="/">
+        </a>
+    )
+}
+
+export const ButtonNavMenu = (props) => {
+    return (
+        <button className={classNames(Style.Button, Style.ButtonNavMenu)} onClick={props.func}>
         </button>
     )
 }
 
 export const ButtonNav = (props) => {
     return (
-        <button className={classNames(Style.Button, Style.ButtonNav)} onClick={props.func}>
+        <button className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
+            <h6>{props.text}</h6>
         </button>
+    )
+}
+
+export const ButtonNavH4 = (props) => {
+    return (
+        <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
+            <h4>{props.text}</h4>
+        </a>
     )
 }
 

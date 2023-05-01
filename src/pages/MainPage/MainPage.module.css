@@ -1,14 +1,14 @@
-.FirstSection > div {
+.MainPage > div {
   padding: 92px 74px;
   width: 100%;
   gap: 30px;
 }
 @media screen and (max-width: 480px) {
-  .FirstSection > div {
+  .MainPage > div {
     padding: 92px 16px;
   }
 }
-.FirstSection > div:nth-child(1) {
+.MainPage > div:nth-child(1) {
   position: relative;
   background-image: url("./../../image/Moscow.jpg");
   background-size: cover;
@@ -21,7 +21,7 @@
   justify-content: center;
   align-items: flex-start;
 }
-.FirstSection > div:nth-child(1):after {
+.MainPage > div:nth-child(1):after {
   content: "";
   position: absolute;
   background-color: rgba(0, 0, 0, 0.4);
@@ -30,54 +30,54 @@
   width: 100%;
   height: 100%;
 }
-.FirstSection > div:nth-child(1) > * {
+.MainPage > div:nth-child(1) > * {
   z-index: 1;
   color: rgb(255, 255, 255);
 }
-.FirstSection > div:nth-child(1) > h1 {
+.MainPage > div:nth-child(1) > h1 {
   text-transform: uppercase;
   max-width: 792px;
 }
 @media screen and (max-width: 480px) {
-  .FirstSection > div:nth-child(1) {
+  .MainPage > div:nth-child(1) {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .FirstSection > div:nth-child(1) > h1 {
+  .MainPage > div:nth-child(1) > h1 {
     width: auto;
     text-align: left;
   }
 }
-.FirstSection > div:nth-child(2) {
+.MainPage > div:nth-child(2) {
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.FirstSection > div:nth-child(3) {
+.MainPage > div:nth-child(3) {
   background-color: rgb(14, 14, 14);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.FirstSection > div:nth-child(3) > h1, .FirstSection > div:nth-child(3) > h4 {
+.MainPage > div:nth-child(3) > h1, .MainPage > div:nth-child(3) > h4 {
   color: rgb(255, 255, 255);
 }
-.FirstSection > div:nth-child(4) {
+.MainPage > div:nth-child(4) {
   background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.FirstSection > div:nth-child(4) > * {
+.MainPage > div:nth-child(4) > * {
   color: rgb(14, 14, 14);
 }
-.FirstSection > div:nth-child(4) > div {
+.MainPage > div:nth-child(4) > div {
   width: 100%;
   height: 65vh;
   border-radius: 16px;
@@ -87,21 +87,21 @@
   background-position: center;
 }
 @media screen and (max-width: 480px) {
-  .FirstSection > div:nth-child(4) > div {
+  .MainPage > div:nth-child(4) > div {
     height: 50vh;
   }
 }
-.FirstSection > div:nth-child(5) {
+.MainPage > div:nth-child(5) {
   background-color: rgb(14, 14, 14);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-.FirstSection > div:nth-child(5) * {
+.MainPage > div:nth-child(5) * {
   color: rgb(255, 255, 255);
 }
-.FirstSection > div:nth-child(5) > div {
+.MainPage > div:nth-child(5) > div {
   width: 100%;
   height: 65vh;
   border-radius: 16px;
@@ -111,9 +111,9 @@
   background-position: top right;
 }
 @media screen and (max-width: 480px) {
-  .FirstSection > div:nth-child(5) > div {
+  .MainPage > div:nth-child(5) > div {
     height: 50vh;
   }
 }
 
-/*# sourceMappingURL=MainSection.module.css.map */
+/*# sourceMappingURL=MainPage.module.css.map */

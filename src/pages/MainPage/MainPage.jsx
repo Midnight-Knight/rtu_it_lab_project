@@ -1,13 +1,13 @@
 import React from "react";
-import Style from "./MainSection.module.css";
+import Style from "./MainPage.module.css";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {Category} from "../../components/Cards/Cards";
 
-export const MainSection = () => {
+export const MainPage = () => {
 
 
     return (
-        <section className={Style.FirstSection}>
+        <section className={Style.MainPage}>
             <div>
                 <h1>Веб Cайт актуальных мероприятий Москвы!</h1>
                 <h4>
