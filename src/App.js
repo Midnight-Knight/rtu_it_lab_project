@@ -6,6 +6,7 @@ import {Footer} from "./components/footer/footer";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {MainPage} from "./pages/MainPage/MainPage";
 import {CulturesPage} from "./pages/CulturesPage/CulturesPage";
+import {EducationPage} from "./pages/EducationPage/EducationPage";
 
 function App() {
     useEffect(() => {
@@ -30,13 +31,14 @@ function App() {
           <div className="App">
               <Routes>
                   <Route path="*" element={<Header NoPages={true}/>}/>
-                  {['/', '/cultures'].map((path) => (
+                  {['/', '/cultures', '/educations'].map((path) => (
                       <Route path={path} element={<Header />} />
                   ))}
               </Routes>
               <Routes>
                   <Route path="/" element={<MainPage/>} />
                   <Route path="/cultures" element={<CulturesPage/>} />
+                  <Route path="/educations" element={<EducationPage/>} />
               </Routes>
               <Footer/>
           </div>

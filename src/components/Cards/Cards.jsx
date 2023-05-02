@@ -16,7 +16,7 @@ export const Category = () => {
             </div>
             <div className={Style.GridCard}>
                 <img alt="" src={photo2}/>
-                <h4>Образовательных мероприятий Учебного центра Мосгосэкспертизы</h4>
+                <h4>Образовательные мероприятия Учебного центра Мосгосэкспертизы</h4>
             </div>
             <div className={Style.GridCard}>
                 <img alt="" src={photo3}/>

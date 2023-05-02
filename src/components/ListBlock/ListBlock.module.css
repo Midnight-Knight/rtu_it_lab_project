@@ -3,7 +3,7 @@
   height: 65vh;
   overflow-y: scroll;
   border-radius: 16px;
-  border: 2px solid rgb(14, 14, 14);
+  background-color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=ListBlock.module.css.map */

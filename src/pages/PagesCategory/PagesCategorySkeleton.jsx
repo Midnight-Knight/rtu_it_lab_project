@@ -31,7 +31,7 @@ export const PagesCategorySkeleton = (props) => {
                 <h5>{props.SectionTwo.h5}</h5>
                 <MyMap/>
             </section>
-            <section className={Style.SectionThree}>
+            <section className={classNames(Style.SectionThree, props.SectionSettings.style)}>
                 <h2>Список мероприятий</h2>
                 <ListBlock/>
             </section>
