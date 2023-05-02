@@ -49,4 +49,63 @@
   }
 }
 
+.SectionOne {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.SectionOne > h2 {
+  text-align: left;
+}
+.SectionOne * {
+  text-align: justify;
+}
+.SectionOne > div {
+  display: grid;
+  justify-content: space-between;
+  align-content: space-between;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 8%;
+}
+.SectionOne > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 30px;
+}
+.SectionOne > div > div > img {
+  width: 100%;
+  height: 27vmax;
+  object-fit: cover;
+  border-radius: 16px;
+}
+@media screen and (max-width: 1023px) {
+  .SectionOne > div {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .SectionOne > div > div > img {
+    height: auto;
+  }
+}
+
+.SectionTwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.SectionThree {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background-color: rgb(255, 255, 255);
+}
+
 /*# sourceMappingURL=PagesCategorySkeleton.module.css.map */

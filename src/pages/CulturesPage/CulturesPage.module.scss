@@ -1,7 +1,16 @@
 @import "./../../style/Color_And_Mixin";
 
-.HelloSection
+.ImageHelloSection
 {
   background-image: url("./../../image/photo1.png");
   background-position: center;
+}
+
+.SectionColor
+{
+  background-color: $Yellow;
+  > *
+  {
+    color: $White;
+  }
 }

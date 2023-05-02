@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["CulturesPage.module.scss"],"names":[],"mappings":"AAEA;EAEE;EACA","file":"CulturesPage.module.css"}
+{"version":3,"sourceRoot":"","sources":["CulturesPage.module.scss","../../style/Color_And_Mixin.scss"],"names":[],"mappings":"AAEA;EAEE;EACA;;;AAGF;EAEE,kBCKO;;ADJP;EAEE,OCbI","file":"CulturesPage.module.css"}

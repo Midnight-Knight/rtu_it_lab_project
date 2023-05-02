@@ -53,3 +53,58 @@
     }
   }
 }
+
+.SectionOne
+{
+  background-color: $White;
+  @include FlexColumnStartStart();
+  > h2
+  {
+    text-align: left;
+  }
+  *
+  {
+    text-align: justify;
+  }
+  > div
+  {
+    display: grid;
+    justify-content: space-between;
+    align-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: 8%;
+    > div
+    {
+      @include FlexColumnStartStart();
+      gap: 30px;
+      > img
+      {
+        width: 100%;
+        height: 27vmax;
+        object-fit: cover;
+        border-radius: 16px;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      > div > img
+      {
+        height: auto;
+      }
+    }
+  }
+}
+
+.SectionTwo
+{
+  @include FlexColumnStartStart();
+}
+
+.SectionThree
+{
+  @include FlexColumnStartStart();
+  background-color: $White;
+}

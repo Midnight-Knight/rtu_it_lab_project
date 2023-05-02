@@ -1,0 +1,10 @@
+@import "./../../style/Color_And_Mixin";
+
+.ListBlock
+{
+  width: 100%;
+  height: 65vh;
+  overflow-y: scroll;
+  border-radius: 16px;
+  border: 2px solid $Black;
+}
