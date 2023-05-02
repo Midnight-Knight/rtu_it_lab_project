@@ -13,7 +13,7 @@ export const Header = (props) => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [NavButtonClick, SetNavButtonClick] = useState(false);
     const [HeaderPositionY, SetHeaderPositionY] = useState(props.NoPages === true ? 51 : window.scrollY);
-    const linkPages = ["/cultures", "/educations", "/tourism"];
+    const linkPages = ["/cultures", "/educations", "/tourism", "/sport"];
 
     const handleResize = () => {
         setScreenWidth(window.innerWidth);
@@ -46,7 +46,7 @@ export const Header = (props) => {
                     <ButtonNavH4 text={"Культура"} href={linkPages[0]}/>
                     <ButtonNavH4 text={"Образование"} href={linkPages[1]}/>
                     <ButtonNavH4 text={"Туризм"} href={linkPages[2]}/>
-                    <ButtonNavH4 text={"Спорт"} href={null}/>
+                    <ButtonNavH4 text={"Спорт"} href={linkPages[3]}/>
                     <ButtonNavH4 text={"Торжественные открытия"} href={null}/>
                     <ButtonNavH4 text={"Кабинет"} href={null}/>
                 </nav>
@@ -62,7 +62,7 @@ export const Header = (props) => {
                     <ButtonNav text={"Культура"} href={linkPages[0]}/>
                     <ButtonNav text={"Образование"} href={linkPages[1]}/>
                     <ButtonNav text={"Туризм"} href={linkPages[2]}/>
-                    <ButtonNav text={"Спорт"} href={null}/>
+                    <ButtonNav text={"Спорт"} href={linkPages[3]}/>
                     <ButtonNav text={"Торжественные открытия"} href={null}/>
                     <ButtonNav text={"Кабинет"} href={null}/>
                 </nav>

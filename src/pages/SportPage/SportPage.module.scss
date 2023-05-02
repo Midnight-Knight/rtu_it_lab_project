@@ -1,0 +1,16 @@
+@import "./../../style/Color_And_Mixin";
+
+.ImageHelloSection
+{
+  background-image: url("./../../image/sport.png");
+  background-position: center;
+}
+
+.SectionColor
+{
+  background-color: $Green;
+  > *
+  {
+    color: $White;
+  }
+}
