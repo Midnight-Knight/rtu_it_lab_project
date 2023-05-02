@@ -13,6 +13,7 @@ export const Header = (props) => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [NavButtonClick, SetNavButtonClick] = useState(false);
     const [HeaderPositionY, SetHeaderPositionY] = useState(props.NoPages === true ? 1 : window.scrollY);
+    const linkPages = ["/cultures"];
 
     const handleResize = () => {
         setScreenWidth(window.innerWidth);
@@ -42,7 +43,7 @@ export const Header = (props) => {
                     <ButtonNavMenu func={() => SetNavButtonClick(!NavButtonClick)}/>
                 </header>
                 <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
-                    <ButtonNavH4 text={"Культура"} href={null}/>
+                    <ButtonNavH4 text={"Культура"} href={linkPages[0]}/>
                     <ButtonNavH4 text={"Образование"} href={null}/>
                     <ButtonNavH4 text={"Туризм"} href={null}/>
                     <ButtonNavH4 text={"Спорт"} href={null}/>
@@ -58,7 +59,7 @@ export const Header = (props) => {
             <header className={classNames(Style.HeaderDesktop,HeaderPositionY === 0 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite)}>
                 <ButtonLogo/>
                 <nav>
-                    <ButtonNav text={"Культура"} href={null}/>
+                    <ButtonNav text={"Культура"} href={linkPages[0]}/>
                     <ButtonNav text={"Образование"} href={null}/>
                     <ButtonNav text={"Туризм"} href={null}/>
                     <ButtonNav text={"Спорт"} href={null}/>

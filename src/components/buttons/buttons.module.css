@@ -45,6 +45,7 @@
   color: rgb(255, 255, 255);
   border-radius: 4px;
   transition: 0.5s background-color;
+  text-decoration: none;
 }
 .ButtonText:hover {
   background-color: rgba(103, 80, 164, 0.3);

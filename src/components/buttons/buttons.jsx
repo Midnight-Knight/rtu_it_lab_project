@@ -25,9 +25,9 @@ export const ButtonNavMenu = (props) => {
 
 export const ButtonNav = (props) => {
     return (
-        <button className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
+        <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
             <h6>{props.text}</h6>
-        </button>
+        </a>
     )
 }
 
