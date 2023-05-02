@@ -33,8 +33,9 @@
   color: rgb(255, 255, 255);
 }
 .HelloSection > h1 {
+  text-align: left;
   text-transform: uppercase;
-  max-width: 792px;
+  max-width: 818px;
 }
 @media screen and (max-width: 480px) {
   .HelloSection {
@@ -45,18 +46,19 @@
   }
   .HelloSection > h1 {
     width: auto;
-    text-align: left;
   }
 }
 
 .SectionOne {
   background-color: rgb(255, 255, 255);
+  height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
 }
 .SectionOne > h2 {
+  width: 100%;
   text-align: left;
 }
 .SectionOne * {
@@ -68,7 +70,9 @@
   align-content: space-between;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-gap: 8%;
+  grid-column-gap: 8%;
+  grid-row-gap: 0%;
+  height: auto;
 }
 .SectionOne > div > div {
   display: flex;
@@ -85,8 +89,10 @@
 }
 @media screen and (max-width: 1023px) {
   .SectionOne > div {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-column-gap: 0%;
+    grid-row-gap: 30px;
   }
   .SectionOne > div > div > img {
     height: auto;

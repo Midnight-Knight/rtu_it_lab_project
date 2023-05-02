@@ -96,6 +96,14 @@ $Hover: rgba(103,80,164,0.3);
   align-items: flex-start;
 }
 
+@mixin FlexColumnBetweenCenter()
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @mixin FlexColumnCenterStart()
 {
   display: flex;

@@ -7,13 +7,14 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {MainPage} from "./pages/MainPage/MainPage";
 import {CulturesPage} from "./pages/CulturesPage/CulturesPage";
 import {EducationPage} from "./pages/EducationPage/EducationPage";
+import {TourismPage} from "./pages/TourismPage/TourismPage";
 
 function App() {
     useEffect(() => {
         async function API()
         {
             try {
-                const response = await axios.get("https://apidata.mos.ru/v1/datasets/3243?api_key=b7546afced8886fa3b41debca1e78a84");
+                const response = await axios.get("https://apidata.mos.ru/v1/datasets/62481?api_key=b7546afced8886fa3b41debca1e78a84");
                 const JsonData = await response.data;
                 console.log(JsonData);
             }
@@ -31,7 +32,7 @@ function App() {
           <div className="App">
               <Routes>
                   <Route path="*" element={<Header NoPages={true}/>}/>
-                  {['/', '/cultures', '/educations'].map((path) => (
+                  {['/', '/cultures', '/educations', '/tourism'].map((path) => (
                       <Route path={path} element={<Header />} />
                   ))}
               </Routes>
@@ -39,6 +40,7 @@ function App() {
                   <Route path="/" element={<MainPage/>} />
                   <Route path="/cultures" element={<CulturesPage/>} />
                   <Route path="/educations" element={<EducationPage/>} />
+                  <Route path="/tourism" element={<TourismPage/>} />
               </Routes>
               <Footer/>
           </div>

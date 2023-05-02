@@ -39,8 +39,9 @@
 
   > h1
   {
+    text-align: left;
     text-transform: uppercase;
-    max-width: 792px;
+    max-width: 818px;
   }
 
   @media screen and (max-width: 480px)
@@ -49,7 +50,6 @@
     > h1
     {
       width: auto;
-      text-align: left;
     }
   }
 }
@@ -57,9 +57,11 @@
 .SectionOne
 {
   background-color: $White;
-  @include FlexColumnStartStart();
+  height: auto;
+  @include FlexColumnBetweenCenter();
   > h2
   {
+    width: 100%;
     text-align: left;
   }
   *
@@ -73,7 +75,9 @@
     align-content: space-between;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
-    grid-gap: 8%;
+    grid-column-gap: 8%;
+    grid-row-gap: 0%;
+    height: auto;
     > div
     {
       @include FlexColumnStartStart();
@@ -88,8 +92,10 @@
     }
 
     @media screen and (max-width: 1023px) {
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: auto;
+      grid-template-rows: auto auto;
+      grid-column-gap: 0%;
+      grid-row-gap: 30px;
       > div > img
       {
         height: auto;
