@@ -119,6 +119,19 @@
   background-color: rgb(0, 0, 0);
   transition: 0.5s opacity;
 }
+.Nav > a {
+  margin: 4px 74px;
+}
+@media screen and (max-width: 1279px) {
+  .Nav > a {
+    margin: 4px 32px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .Nav > a {
+    margin: 4px 16px;
+  }
+}
 
 .NavTrueClick {
   opacity: 1;

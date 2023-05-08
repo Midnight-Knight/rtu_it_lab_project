@@ -2,10 +2,6 @@
   padding: 10px 24px;
 }
 
-.ButtonMobile {
-  padding: 10px 0px;
-}
-
 .ButtonLogo {
   background-image: url("./../../image/moscow-svgrepo-com.svg");
   background-size: cover;

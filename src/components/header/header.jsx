@@ -2,10 +2,8 @@ import React, {useEffect, useState} from "react";
 import Style from "./header.module.css";
 import {
     ButtonLogo,
-    ButtonLogoMobile,
     ButtonNavMenu,
-    ButtonNav,
-    ButtonNavH4, ButtonAccount
+    ButtonNav, ButtonAccount
 } from "../buttons/buttons";
 import classNames from "classnames";
 
@@ -13,8 +11,6 @@ export const Header = (props) => {
     const [NavButtonClick, SetNavButtonClick] = useState(false);
     const [HeaderPositionY, SetHeaderPositionY] = useState(props.NoPages === true ? 51 : window.scrollY);
     const linkPages = ["/festivals", "/sport", "/exhibitions", "/art", "/citylife", "/family"];
-
-
 
     const PositionY = () => {
       SetHeaderPositionY(window.scrollY);
@@ -39,12 +35,12 @@ export const Header = (props) => {
                 </div>
             </header>
             <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
-                <ButtonNavH4 text={"Фестивали и праздники"} href={linkPages[0]}/>
-                <ButtonNavH4 text={"Спорт"} href={linkPages[1]}/>
-                <ButtonNavH4 text={"Профессиональные выставки и форумы"} href={linkPages[2]}/>
-                <ButtonNavH4 text={"Художественные выставки"} href={linkPages[3]}/>
-                <ButtonNavH4 text={"Столичная жизнь"} href={linkPages[4]}/>
-                <ButtonNavH4 text={"Отдых с детьми"} href={linkPages[5]}/>
+                <ButtonNav text={"Фестивали и праздники"} href={linkPages[0]}/>
+                <ButtonNav text={"Спорт"} href={linkPages[1]}/>
+                <ButtonNav text={"Профессиональные выставки и форумы"} href={linkPages[2]}/>
+                <ButtonNav text={"Художественные выставки"} href={linkPages[3]}/>
+                <ButtonNav text={"Столичная жизнь"} href={linkPages[4]}/>
+                <ButtonNav text={"Отдых с детьми"} href={linkPages[5]}/>
             </nav>
         </>
     )

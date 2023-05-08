@@ -9,13 +9,6 @@ export const ButtonLogo = () => {
     )
 }
 
-export const ButtonLogoMobile = () => {
-    return (
-        <a className={classNames(Style.ButtonMobile,Style.ButtonLogo)} href="/">
-        </a>
-    )
-}
-
 export const ButtonNavMenu = (props) => {
     return (
         <button className={classNames(Style.Button, Style.ButtonNavMenu)} onClick={props.func}>
@@ -28,14 +21,6 @@ export const ButtonAccount = () => {
 }
 
 export const ButtonNav = (props) => {
-    return (
-        <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
-            <h6>{props.text}</h6>
-        </a>
-    )
-}
-
-export const ButtonNavH4 = (props) => {
     return (
         <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
             <h4>{props.text}</h4>
