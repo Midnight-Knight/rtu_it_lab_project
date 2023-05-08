@@ -1,16 +1,16 @@
 import React from "react";
-import Style from "./SportPage.module.css";
+import Style from "./FestivalsPage.module.css";
 import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
 import PhotoSport1 from "../../image/sport1.jpg";
 import PhotoSport2 from "../../image/sport2.jpg";
 
-export const SportPage = () => {
+export const FestivalsPage = () => {
     return (
         <PagesCategorySkeleton
             HelloSection={{
-                style: Style.ImageHelloSection, h1: "Категория спорта",}}
+                style: Style.ImageHelloSection, h1: "Фестивали и праздники"}}
             SectionOne={{
-                h2: "Перечень спортивных мероприятий, проводимых Департаментом спорта города Москвы",
+                h2: "Перечень Фестивали и праздники, проводимых Департаментом спорта города Москвы",
                 Oneh5: "«Перечень спортивных мероприятий» содержит подробную информацию о сроках и местах проведения значимых массовых " +
                     "спортивно-зрелищных мероприятий города Москвы. Эта страница позволяет получить подробную информацию о мероприятиях " +
                     "города Москвы, посмотреть: наименование мероприятия, сроки и место проведения, количество участников, виды спорта и " +

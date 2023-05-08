@@ -99,18 +99,15 @@
   }
 }
 
-.SectionTwo {
+.SectionTwo, .SectionThree {
+  background-color: rgb(14, 14, 14);
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
 }
-
-.SectionThree {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+.SectionTwo > *, .SectionThree > * {
+  color: rgb(255, 255, 255);
 }
 
 /*# sourceMappingURL=PagesCategorySkeleton.module.css.map */

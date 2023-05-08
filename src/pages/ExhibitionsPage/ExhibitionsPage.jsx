@@ -1,10 +1,10 @@
 import React from "react";
-import Style from "./SportPage.module.css";
+import Style from "./ExhibitionsPage.module.css";
 import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
 import PhotoSport1 from "../../image/sport1.jpg";
 import PhotoSport2 from "../../image/sport2.jpg";
 
-export const SportPage = () => {
+export const ExhibitionsPage = () => {
     return (
         <PagesCategorySkeleton
             HelloSection={{

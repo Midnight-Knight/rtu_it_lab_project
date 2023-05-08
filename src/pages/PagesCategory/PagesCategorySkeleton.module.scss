@@ -104,12 +104,12 @@
   }
 }
 
-.SectionTwo
+.SectionTwo, .SectionThree
 {
-  @include FlexColumnStartStart();
-}
-
-.SectionThree
-{
+  background-color: $Black;
+  > *
+  {
+    color: $White;
+  }
   @include FlexColumnStartStart();
 }

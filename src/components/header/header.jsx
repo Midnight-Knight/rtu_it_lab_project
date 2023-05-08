@@ -13,7 +13,7 @@ export const Header = (props) => {
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
     const [NavButtonClick, SetNavButtonClick] = useState(false);
     const [HeaderPositionY, SetHeaderPositionY] = useState(props.NoPages === true ? 51 : window.scrollY);
-    const linkPages = ["/cultures", "/educations", "/tourism", "/sport"];
+    const linkPages = ["/festivals", "/sport", "/exhibitions", "/art", "/citylife", "/family"];
 
     const handleResize = () => {
         setScreenWidth(window.innerWidth);
@@ -43,11 +43,12 @@ export const Header = (props) => {
                     <ButtonNavMenu func={() => SetNavButtonClick(!NavButtonClick)}/>
                 </header>
                 <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
-                    <ButtonNavH4 text={"Культура"} href={linkPages[0]}/>
-                    <ButtonNavH4 text={"Образование"} href={linkPages[1]}/>
-                    <ButtonNavH4 text={"Туризм"} href={linkPages[2]}/>
-                    <ButtonNavH4 text={"Спорт"} href={linkPages[3]}/>
-                    <ButtonNavH4 text={"Торжественные открытия"} href={null}/>
+                    <ButtonNavH4 text={"Фестивали и праздники"} href={linkPages[0]}/>
+                    <ButtonNavH4 text={"Спорт"} href={linkPages[1]}/>
+                    <ButtonNavH4 text={"Профессиональные выставки и форумы"} href={linkPages[2]}/>
+                    <ButtonNavH4 text={"Художественные выставки"} href={linkPages[3]}/>
+                    <ButtonNavH4 text={"Столичная жизнь"} href={linkPages[4]}/>
+                    <ButtonNavH4 text={"Отдых с детьми"} href={linkPages[5]}/>
                     <ButtonNavH4 text={"Кабинет"} href={null}/>
                 </nav>
             </>
@@ -59,11 +60,12 @@ export const Header = (props) => {
             <header className={classNames(Style.HeaderDesktop,HeaderPositionY <= 50 ? Style.HeaderBackgroundBlack : Style.HeaderBackgroundWhite)}>
                 <ButtonLogo/>
                 <nav>
-                    <ButtonNav text={"Культура"} href={linkPages[0]}/>
-                    <ButtonNav text={"Образование"} href={linkPages[1]}/>
-                    <ButtonNav text={"Туризм"} href={linkPages[2]}/>
-                    <ButtonNav text={"Спорт"} href={linkPages[3]}/>
-                    <ButtonNav text={"Торжественные открытия"} href={null}/>
+                    <ButtonNav text={"Фестивали"} href={linkPages[0]}/>
+                    <ButtonNav text={"Спорт"} href={linkPages[1]}/>
+                    <ButtonNav text={"Выставки"} href={linkPages[2]}/>
+                    <ButtonNav text={"Художественные выставки"} href={linkPages[3]}/>
+                    <ButtonNav text={"Столичная жизнь"} href={linkPages[4]}/>
+                    <ButtonNav text={"Отдых с детьми"} href={linkPages[5]}/>
                     <ButtonNav text={"Кабинет"} href={null}/>
                 </nav>
             </header>

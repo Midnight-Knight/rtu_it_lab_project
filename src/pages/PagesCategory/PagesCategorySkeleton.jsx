@@ -9,9 +9,6 @@ export const PagesCategorySkeleton = (props) => {
         <section className={Style.PagesCategorySkeleton}>
             <section className={classNames(Style.HelloSection,props.HelloSection.style)}>
                 <h1>{props.HelloSection.h1}</h1>
-                <h4>
-                    {props.HelloSection.h4}
-                </h4>
             </section>
             <section className={Style.SectionOne}>
                 <h2>{props.SectionOne.h2}</h2>
@@ -26,12 +23,12 @@ export const PagesCategorySkeleton = (props) => {
                     </div>
                 </div>
             </section>
-            <section className={classNames(Style.SectionTwo, props.SectionSettings.style)}>
+            <section className={Style.SectionTwo}>
                 <h2>Интерактивная карта</h2>
                 <h5>{props.SectionTwo.h5}</h5>
                 <MyMap/>
             </section>
-            <section className={classNames(Style.SectionThree, props.SectionSettings.style)}>
+            <section className={Style.SectionThree}>
                 <h2>Список мероприятий</h2>
                 <ListBlock/>
             </section>

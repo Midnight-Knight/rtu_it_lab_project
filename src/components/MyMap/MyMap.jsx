@@ -98,16 +98,16 @@ export const MyMap = () => {
     }
 
     useEffect(() => {
-        SetMapPlacemark([<PlacemarkRed key={1} active={true} func={handleClick} coordinates={[55.76, 37.64]}/>,
-            <PlacemarkYellow key={2} active={true} func={handleClick} coordinates={[55.71, 37.64]}/>,
-            <PlacemarkGreen key={3} active={true} func={handleClick} coordinates={[55.81, 37.64]}/>,
-            <PlacemarkBlue key={4} active={true} func={handleClick} coordinates={[55.76, 37.54]}/>,
-            <PlacemarkPurple key={5} active={true} func={handleClick} coordinates={[55.76, 37.74]}/>,
-            <PlacemarkRed key={6} func={handleClick} coordinates={[55.76, 37.84]}/>,
-            <PlacemarkYellow key={7} func={handleClick} coordinates={[55.71, 37.54]}/>,
-            <PlacemarkGreen key={8} func={handleClick} coordinates={[55.71, 37.74]}/>,
-            <PlacemarkBlue key={9} func={handleClick} coordinates={[55.81, 37.74]}/>,
-            <PlacemarkPurple key={10} func={handleClick} coordinates={[55.81, 37.54]}/>]);
+        SetMapPlacemark([<PlacemarkRed key="1pl" active={true} func={handleClick} coordinates={[55.76, 37.64]}/>,
+            <PlacemarkYellow key="2pl" active={true} func={handleClick} coordinates={[55.71, 37.64]}/>,
+            <PlacemarkGreen key="3pl" active={true} func={handleClick} coordinates={[55.81, 37.64]}/>,
+            <PlacemarkBlue key="4pl" active={true} func={handleClick} coordinates={[55.76, 37.54]}/>,
+            <PlacemarkPurple key="5pl" active={true} func={handleClick} coordinates={[55.76, 37.74]}/>,
+            <PlacemarkRed key="6pl" func={handleClick} coordinates={[55.76, 37.84]}/>,
+            <PlacemarkYellow key="7pl" func={handleClick} coordinates={[55.71, 37.54]}/>,
+            <PlacemarkGreen key="8pl" func={handleClick} coordinates={[55.71, 37.74]}/>,
+            <PlacemarkBlue key="9pl" func={handleClick} coordinates={[55.81, 37.74]}/>,
+            <PlacemarkPurple key="10pl" func={handleClick} coordinates={[55.81, 37.54]}/>]);
     }, [])
 
 
