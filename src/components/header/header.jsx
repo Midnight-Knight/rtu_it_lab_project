@@ -1,10 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Style from "./header.module.css";
-import {
-    ButtonLogo,
-    ButtonNavMenu,
-    ButtonNav, ButtonAccount
-} from "../buttons/buttons";
+import {ButtonLogo, ButtonNavMenu, ButtonNav, ButtonAccount} from "../buttons/buttons";
 import classNames from "classnames";
 
 export const Header = (props) => {

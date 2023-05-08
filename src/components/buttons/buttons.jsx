@@ -17,7 +17,10 @@ export const ButtonNavMenu = (props) => {
 }
 
 export const ButtonAccount = () => {
-    return <a className={classNames(Style.Button, Style.ButtonAccount)} href="/"></a>
+    return (
+        <a className={classNames(Style.Button, Style.ButtonAccount)} href="/">
+        </a>
+    )
 }
 
 export const ButtonNav = (props) => {
