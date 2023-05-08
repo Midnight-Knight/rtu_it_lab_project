@@ -14,9 +14,23 @@
   height: 40px;
   width: 40px;
   background-color: rgba(0, 0, 0, 0);
-  transition: 0.5s transform;
+  transition: 0.5s transform, 0.5s filter;
 }
 .ButtonLogo:hover {
+  transform: scale(1.3);
+}
+
+.ButtonAccount {
+  background-image: url("./../../image/account_circle.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.5s transform, 0.5s filter;
+}
+.ButtonAccount:hover {
   transform: scale(1.3);
 }
 
@@ -28,6 +42,10 @@
   height: 40px;
   width: 40px;
   background-color: rgba(0, 0, 0, 0);
+  transition: 0.5s transform, 0.5s filter;
+}
+.ButtonNavMenu:hover {
+  transform: scale(1.3);
 }
 
 .ButtonFilled {
