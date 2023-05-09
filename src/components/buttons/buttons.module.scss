@@ -3,6 +3,7 @@
 .Button
 {
   padding: 10px 24px;
+  @include FlexRowBetweenCenter();
 }
 
 .ButtonLogo
@@ -53,6 +54,22 @@
   }
 }
 
+.ButtonNav
+{
+  margin: 8px 74px;
+  gap: 8px;
+  @media screen and (max-width: 1279px){
+    margin: 8px 32px;
+  }
+  @media screen and (max-width: 480px) {
+    margin: 8px 16px;
+  }
+  > img
+  {
+    height: 100%;
+  }
+}
+
 .ButtonFilled
 {
   background-color: $Blue;
@@ -66,15 +83,15 @@
 
 .ButtonText
 {
-  margin: 0px 4px;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0,0,0);
   color: $White;
   border-radius: 4px;
-  transition: 0.5s background-color;
+  filter: invert(0%);
+  transition: 0.5s filter;
   text-decoration: none;
   > &:hover
   {
-    background-color: $Hover;
+    filter: invert(100%);
   }
 }
 

@@ -25,7 +25,8 @@ export const ButtonAccount = () => {
 
 export const ButtonNav = (props) => {
     return (
-        <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
+        <a className={classNames(Style.Button, Style.ButtonText, Style.ButtonNav)} href={props.href}>
+            <img src={props.image} alt=""/>
             <h4>{props.text}</h4>
         </a>
     )

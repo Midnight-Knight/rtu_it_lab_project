@@ -2,6 +2,12 @@ import React, {useEffect, useState} from "react";
 import Style from "./header.module.css";
 import {ButtonLogo, ButtonNavMenu, ButtonNav, ButtonAccount} from "../buttons/buttons";
 import classNames from "classnames";
+import FestivalsSvg from "./../../image/festivals_svg.svg";
+import SportSVG from "./../../image/sport_svg.svg";
+import ExhibitionsSVG from "./../../image/exhibitions_svg.svg";
+import ArtSVG from "./../../image/art_svg.svg";
+import CitylifeSVG from "./../../image/citylife_svg.svg";
+import FamilySVG from "./../../image/family_svg.svg";
 
 export const Header = (props) => {
     const [NavButtonClick, SetNavButtonClick] = useState(false);
@@ -31,12 +37,12 @@ export const Header = (props) => {
                 </div>
             </header>
             <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>
-                <ButtonNav text={"Фестивали и праздники"} href={linkPages[0]}/>
-                <ButtonNav text={"Спорт"} href={linkPages[1]}/>
-                <ButtonNav text={"Профессиональные выставки и форумы"} href={linkPages[2]}/>
-                <ButtonNav text={"Художественные выставки"} href={linkPages[3]}/>
-                <ButtonNav text={"Столичная жизнь"} href={linkPages[4]}/>
-                <ButtonNav text={"Отдых с детьми"} href={linkPages[5]}/>
+                <ButtonNav image={FestivalsSvg} text={"Фестивали и праздники"} href={linkPages[0]}/>
+                <ButtonNav image={SportSVG} text={"Спорт"} href={linkPages[1]}/>
+                <ButtonNav image={ExhibitionsSVG} text={"Профессиональные выставки и форумы"} href={linkPages[2]}/>
+                <ButtonNav image={ArtSVG} text={"Художественные выставки"} href={linkPages[3]}/>
+                <ButtonNav image={CitylifeSVG} text={"Столичная жизнь"} href={linkPages[4]}/>
+                <ButtonNav image={FamilySVG} text={"Отдых с детьми"} href={linkPages[5]}/>
             </nav>
         </>
     )

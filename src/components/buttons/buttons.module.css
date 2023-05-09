@@ -1,5 +1,9 @@
 .Button {
   padding: 10px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .ButtonLogo {
@@ -44,6 +48,24 @@
   transform: scale(1.3);
 }
 
+.ButtonNav {
+  margin: 8px 74px;
+  gap: 8px;
+}
+@media screen and (max-width: 1279px) {
+  .ButtonNav {
+    margin: 8px 32px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .ButtonNav {
+    margin: 8px 16px;
+  }
+}
+.ButtonNav > img {
+  height: 100%;
+}
+
 .ButtonFilled {
   background-color: rgb(28, 125, 215);
 }
@@ -54,15 +76,15 @@
 }
 
 .ButtonText {
-  margin: 0px 4px;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
   border-radius: 4px;
-  transition: 0.5s background-color;
+  filter: invert(0%);
+  transition: 0.5s filter;
   text-decoration: none;
 }
 .ButtonText:hover {
-  background-color: rgba(103, 80, 164, 0.3);
+  filter: invert(100%);
 }
 
 .ButtonElevated {
