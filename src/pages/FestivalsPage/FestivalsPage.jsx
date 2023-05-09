@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "./FestivalsPage.module.css";
 import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
-import PhotoSport1 from "../../image/sport1.jpg";
-import PhotoSport2 from "../../image/sport2.jpg";
+import Photo1 from "../../image/festivals1.jpg";
+import Photo2 from "../../image/festivals2.jpg";
 
 export const FestivalsPage = () => {
     return (
@@ -10,7 +10,7 @@ export const FestivalsPage = () => {
             HelloSection={{
                 style: Style.ImageHelloSection, h1: "Фестивали и праздники"}}
             SectionOne={{
-                h2: "Перечень Фестивали и праздники, проводимых Департаментом спорта города Москвы",
+                h2: "Перечень Фестивалей и праздников, проводимых в городе Москва",
                 Oneh5: "«Перечень спортивных мероприятий» содержит подробную информацию о сроках и местах проведения значимых массовых " +
                     "спортивно-зрелищных мероприятий города Москвы. Эта страница позволяет получить подробную информацию о мероприятиях " +
                     "города Москвы, посмотреть: наименование мероприятия, сроки и место проведения, количество участников, виды спорта и " +
@@ -19,8 +19,8 @@ export const FestivalsPage = () => {
                     "соревнования судейская коллегия, в состав которой входят: главный судья, заместители главного судьи, главный секретарь, " +
                     "заместители главного секретаря, судьи-диспетчеры, судьи-секретари, ведущие судьи, судьи-ассистенты, врач. " +
                     "А также к проведению соревнований привлекаются волонтеры.",
-                image1: PhotoSport1,
-                image2: PhotoSport2}}
+                image1: Photo1,
+                image2: Photo2}}
             SectionTwo={{h5: "Карта спортивных мероприятий, города Москвы"}}
         />
     )

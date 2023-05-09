@@ -1,8 +1,8 @@
 import React from "react";
 import Style from "./CitylifePage.module.css";
 import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
-import PhotoSport1 from "../../image/sport1.jpg";
-import PhotoSport2 from "../../image/sport2.jpg";
+import Photo1 from "../../image/citylife1.jpg";
+import Photo2 from "../../image/citylife2.jpg";
 
 export const CitylifePage = () => {
     return (
@@ -19,8 +19,8 @@ export const CitylifePage = () => {
                     "соревнования судейская коллегия, в состав которой входят: главный судья, заместители главного судьи, главный секретарь, " +
                     "заместители главного секретаря, судьи-диспетчеры, судьи-секретари, ведущие судьи, судьи-ассистенты, врач. " +
                     "А также к проведению соревнований привлекаются волонтеры.",
-                image1: PhotoSport1,
-                image2: PhotoSport2}}
+                image1: Photo1,
+                image2: Photo2}}
             SectionTwo={{h5: "Карта спортивных мероприятий, города Москвы"}}
         />
     )
