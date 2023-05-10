@@ -11,7 +11,7 @@ import FamilySVG from "./../../image/family_svg.svg";
 
 export const Header = (props) => {
     const [NavButtonClick, SetNavButtonClick] = useState(false);
-    const [HeaderPositionY, SetHeaderPositionY] = useState(props.NoPages === true ? 51 : window.scrollY);
+    const [HeaderPositionY, SetHeaderPositionY] = useState(props.Animation === false ? 51 : window.scrollY);
     const linkPages = ["/festivals", "/sport", "/exhibitions", "/art", "/citylife", "/family"];
 
     const PositionY = () => {
@@ -19,10 +19,13 @@ export const Header = (props) => {
     };
 
     useEffect(() => {
-        window.addEventListener('scroll', PositionY);
-        return () => {
-            window.removeEventListener('scroll', PositionY);
-        };
+        if (props.Animation !== false) {
+            window.addEventListener('scroll', PositionY);
+            return () => {
+                window.removeEventListener('scroll', PositionY);
+            };
+        }
+        // eslint-disable-next-line
     }, []);
 
 

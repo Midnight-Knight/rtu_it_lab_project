@@ -1,0 +1,15 @@
+@import "./../style/Color_And_Mixin";
+
+.Page
+{
+  > section
+  {
+    padding: 92px 74px;
+    width: 100%;
+    gap: 30px;
+
+    @media screen and (max-width: 480px){
+      padding: 92px 16px;
+    }
+  }
+}

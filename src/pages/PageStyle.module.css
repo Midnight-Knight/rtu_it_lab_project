@@ -1,0 +1,12 @@
+.Page > section {
+  padding: 92px 74px;
+  width: 100%;
+  gap: 30px;
+}
+@media screen and (max-width: 480px) {
+  .Page > section {
+    padding: 92px 16px;
+  }
+}
+
+/*# sourceMappingURL=PageStyle.module.css.map */

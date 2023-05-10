@@ -1,14 +1,3 @@
-.PagesCategorySkeleton > section {
-  padding: 92px 74px;
-  width: 100%;
-  gap: 30px;
-}
-@media screen and (max-width: 480px) {
-  .PagesCategorySkeleton > section {
-    padding: 92px 16px;
-  }
-}
-
 .HelloSection {
   position: relative;
   background-size: cover;

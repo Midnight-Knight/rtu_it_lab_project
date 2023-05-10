@@ -2,16 +2,8 @@
 
 .MainPage
 {
-  > div
+  > section
   {
-    padding: 92px 74px;
-    width: 100%;
-    gap: 30px;
-
-    @media screen and (max-width: 480px){
-      padding: 92px 16px;
-    }
-
     > &:nth-child(1)
     {
       position: relative;
