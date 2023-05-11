@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import {
     Clusterer,
     FullscreenControl,
@@ -29,7 +29,6 @@ const PlacemarkArt = (props) => {
         iconImageHref: props.active === true ? PlacemarkArtColor : PlacemarkArtBlack,
     }
 
-
     return (
         <Placemark
             options={placemarkOptions}
@@ -56,6 +55,7 @@ const PlacemarkArt = (props) => {
 }
 
 const PlacemarkFamily = (props) => {
+
     const placemarkOptions = {
         iconLayout: "default#image",
         iconImageSize: [32, 48],
@@ -152,8 +152,10 @@ const PlacemarkExhibitions = (props) => {
 }
 
 const PlacemarkFestivals = (props) => {
+
     const placemarkOptions = {
         iconLayout: "default#image",
+        showInAlphabeticalOrder: true,
         iconImageSize: [32, 48],
         iconImageHref: props.active === true ? PlacemarkFestivalsColor : PlacemarkFestivalsBlack,
     }
@@ -216,7 +218,6 @@ const PlacemarkCitylife = (props) => {
 }
 
 export const MyMap = (props) => {
-    const [MapPlacemark, SetMapPlacemark] = useState([<></>]);
     const [balloonIsOpen, setBalloonIsOpen] = useState(false);
 
     const handlePlacemarkClick = () => {
@@ -227,9 +228,31 @@ export const MyMap = (props) => {
         setBalloonIsOpen(false);
     };
 
+    let festivals = [<></>];
+    if (props.festivals !== undefined)
+    {
+        festivals = [];
+        for (let i = 0; i < props.festivals.length; ++i)
+        {
+            festivals.push(<PlacemarkFestivals
+                coordinates={props.festivals[i].coordinates}
+                active={props.festivals[i].Status === 1 ? true : false}
+                balloon={{
+                    balloonOpen: balloonIsOpen,
+                    balloonClose: handleBalloonClose,
+                    func: handlePlacemarkClick,
+                    link: "/" + props.festivals[i].ID,
+                    title: props.festivals[i].Name,
+                    address: props.festivals[i].Address,
+                    category: props.festivals[i].TypeEvent,
+                    date: props.festivals[i].Date
+                }}/>);
+        }
+    }
+
     const mapData = {
-        center: [55.751432, 37.618883],
-        zoom: 10,
+        center: props.coordinates === undefined ? [55.751432, 37.618883] : props.coordinates,
+        zoom: props.coordinates === undefined ? 10 : 19,
         controls: []
     };
 
@@ -240,78 +263,44 @@ export const MyMap = (props) => {
         ],
     };
 
-    const clustererOptions = {
+    const clustererOptionsArt = {
         preset: "islands#invertedVioletClusterIcons",
         groupByCoordinates: false,
         clusterIconColor: '#E01B1B'
     }
 
-    useEffect(() => {
-        SetMapPlacemark([
-            <PlacemarkFamily key="1pl" coordinates={[55.782301, 37.615136]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>,
-            <PlacemarkArt key="2pl" coordinates={[55.802411, 37.635246]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>,
-            <PlacemarkFestivals key="3pl" coordinates={[55.782191, 37.625026]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>,
-            <PlacemarkExhibitions key="4pl" coordinates={[55.792411, 37.615136]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>,
-            <PlacemarkSport key="5pl" coordinates={[55.802301, 37.625246]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>,
-            <PlacemarkCitylife key="6pl" coordinates={[55.792201, 37.625126]}
-                             balloon={{
-                                 balloonOpen: balloonIsOpen,
-                                 balloonClose: handleBalloonClose,
-                                 func: handlePlacemarkClick,
-                                 link: `/sport`,
-                                 title: "ла",
-                                 address: "address",
-                                 category: "category",
-                                 date: "date"}}/>]);
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [])
+    const clustererOptionsSport = {
+        preset: "islands#invertedVioletClusterIcons",
+        groupByCoordinates: false,
+        clusterIconColor: '#3FC33C'
+    }
 
+    const clustererOptionsFamily = {
+        preset: "islands#invertedVioletClusterIcons",
+        groupByCoordinates: false,
+        clusterIconColor: '#D78C1C'
+    }
 
+    const clustererOptionsFestivals = {
+        preset: "islands#invertedVioletClusterIcons",
+        showInAlphabeticalOrder: true,
+        groupByCoordinates: false,
+        clusterIconColor: '#01079D'
+    }
+
+    const clustererOptionsExhibitions = {
+        preset: "islands#invertedVioletClusterIcons",
+        groupByCoordinates: false,
+        clusterIconColor: '#B037C3'
+    }
+
+    const clustererOptionsCitylife = {
+        preset: "islands#invertedVioletClusterIcons",
+        groupByCoordinates: false,
+        clusterIconColor: '#0DACB6'
+    }
+
+    console.log(props.festivals[0]);
 
     return (
         <div className={Style.InteractiveMap}>
@@ -320,8 +309,8 @@ export const MyMap = (props) => {
                        apikey: "2d497516-211b-4791-9eb2-bc59d4ea43ee",
                    }}>
                 <Map width={"100%"} height={"100%"} options={mapOptions} state={mapData}>
-                    <Clusterer options={clustererOptions}>
-                        {MapPlacemark.map(elem => {return elem})}
+                    <Clusterer options={clustererOptionsFestivals}>
+                        {festivals.map((elem) => (elem))}
                     </Clusterer>
                     <GeolocationControl options={{ float: "left" }} />
                     <FullscreenControl options={{ float: "right"}}/>

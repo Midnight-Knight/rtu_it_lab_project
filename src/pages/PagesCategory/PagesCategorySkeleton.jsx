@@ -27,7 +27,7 @@ export const PagesCategorySkeleton = (props) => {
             <section className={Style.SectionTwo}>
                 <h2>Интерактивная карта</h2>
                 <h5>{props.SectionTwo.h5}</h5>
-                <MyMap/>
+                <MyMap festivals={props.festivals}/>
             </section>
             <section className={Style.SectionThree}>
                 <h2>Список мероприятий</h2>

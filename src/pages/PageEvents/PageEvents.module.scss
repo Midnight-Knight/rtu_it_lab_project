@@ -1,0 +1,38 @@
+@import "./../../style/Color_And_Mixin";
+
+.PageEvent
+{
+  > section
+  {
+    > &:nth-child(1)
+    {
+      background-color: $White;
+      min-height: 100vh;
+      margin-top: 80px;
+      *
+      {
+        text-align: justify;
+      }
+    }
+    > &:nth-child(2), > &:nth-child(3)
+    {
+      background-color: $Black;
+      @include FlexColumnBetweenStart();
+      min-height: 100vh;
+      *
+      {
+        color: $White;
+      }
+    }
+  }
+}
+
+.MarginS
+{
+  margin-bottom: 8px;
+}
+
+.MarginB
+{
+  margin-bottom: 40px;
+}

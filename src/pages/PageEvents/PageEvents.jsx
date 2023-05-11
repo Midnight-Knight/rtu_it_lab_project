@@ -1,26 +1,24 @@
 import React, {memo} from "react";
 import Style from "./PageEvents.module.css";
 import UnitedStyle from "./../PageStyle.module.css";
+import classNames from "classnames";
 
 export const PageEvents = memo(({dataJSON}) => {
     const data = dataJSON;
 
     return (
-        <section className={UnitedStyle.Page}>
+        <section className={classNames(UnitedStyle.Page, Style.PageEvent)}>
             <section>
-                <h1>{data.Name}</h1>
-                <h3>Статус мероприятия: {data.Status === 0 ? "В ожидание начала" : (data.Status === 1 ? "В процессе" : "Завершено")}</h3>
-                <h3>Тип мероприятия: {data.TypeEvent}</h3>
-                <h3>Организатор: {data.ResponsibleEvent}</h3>
-                <h3>Административный округ: {data.AdmArea}</h3>
-                <h3>Район: {data.District}</h3>
-                <h3>Адрес: {data.Address}</h3>
-                <h3>Дата проведения: {data.Date}</h3>
-                <h3>Локация: {data.Location}</h3>
-                <div>
-                    <h3>Описание: </h3>
-                    <h3>{data.DescriptionEvent}</h3>
-                </div>
+                <h1 className={Style.MarginB}>{data.Name}</h1>
+                <h3 className={Style.MarginS}>Тип мероприятия: <span>{data.TypeEvent}</span></h3>
+                <h3 className={Style.MarginB}>Организатор: <span>{data.ResponsibleEvent}</span></h3>
+                <h3 className={Style.MarginS}>Статус мероприятия: <span>{data.Status === 0 ? "В ожидание начала" : (data.Status === 1 ? "В процессе" : "Завершено")}</span></h3>
+                <h3 className={Style.MarginB}>Дата проведения: <span>{data.Date}</span></h3>
+                <h3 className={Style.MarginS}>Административный округ: <span>{data.AdmArea}</span></h3>
+                <h3 className={Style.MarginS}>Район: <span>{data.District}</span></h3>
+                <h3 className={Style.MarginS}>Адрес: <span>{data.Address}</span></h3>
+                <h3 className={Style.MarginB}>Локация: <span>{data.Location}</span></h3>
+                <h3>Описание: <span>{data.DescriptionEvent}</span></h3>
             </section>
             <section>
                 <h1>Мероприятие на карте</h1>

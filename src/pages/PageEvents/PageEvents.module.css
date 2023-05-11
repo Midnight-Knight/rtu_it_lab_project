@@ -1,3 +1,29 @@
+.PageEvent > section:nth-child(1) {
+  background-color: rgb(255, 255, 255);
+  min-height: 100vh;
+  margin-top: 80px;
+}
+.PageEvent > section:nth-child(1) * {
+  text-align: justify;
+}
+.PageEvent > section:nth-child(2), .PageEvent > section:nth-child(3) {
+  background-color: rgb(14, 14, 14);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+.PageEvent > section:nth-child(2) *, .PageEvent > section:nth-child(3) * {
+  color: rgb(255, 255, 255);
+}
 
+.MarginS {
+  margin-bottom: 8px;
+}
+
+.MarginB {
+  margin-bottom: 40px;
+}
 
 /*# sourceMappingURL=PageEvents.module.css.map */

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"PageEvents.module.css"}
+{"version":3,"sourceRoot":"","sources":["PageEvents.module.scss","../../style/Color_And_Mixin.scss"],"names":[],"mappings":"AAMI;EAEE,kBCRE;EDSF;EACA;;AACA;EAEE;;AAGJ;EAEE,kBCdE;EAyGN;EACA;EACA;EACA;ED5FI;;AACA;EAEE,OCvBA;;;AD6BR;EAEE;;;AAGF;EAEE","file":"PageEvents.module.css"}

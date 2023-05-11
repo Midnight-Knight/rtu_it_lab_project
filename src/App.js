@@ -24,13 +24,13 @@ function App(props) {
                   ))}
               </Routes>
               <Routes>
-                  <Route path="/" element={<MainPage/>} />
-                  <Route path="/festivals" element={<FestivalsPage/>} />
-                  <Route path="/sport" element={<SportPage/>} />
-                  <Route path="/exhibitions" element={<ExhibitionsPage/>} />
-                  <Route path="/art" element={<ArtPage/>}/>
-                  <Route path="/citylife" element={<CitylifePage/>}/>
-                  <Route path="/family" element={<FamilyPage/>}/>
+                  <Route path="/" element={<MainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
+                  <Route path="/festivals" element={<FestivalsPage festivals={props.festivals}/>} />
+                  <Route path="/sport" element={<SportPage sport={props.sport}/>} />
+                  <Route path="/exhibitions" element={<ExhibitionsPage exhibitions={props.exhibitions}/>} />
+                  <Route path="/art" element={<ArtPage art={props.art}/>}/>
+                  <Route path="/citylife" element={<CitylifePage citylife={props.citylife}/>}/>
+                  <Route path="/family" element={<FamilyPage family={props.family}/>}/>
                   {props.festivals.map((elem) => (
                       <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
                   ))}

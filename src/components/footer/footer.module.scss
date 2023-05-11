@@ -2,7 +2,7 @@
 
 .Footer
 {
-  padding: 92px 74px;
+  padding: 74px 74px 32px;
   width: 100%;
   height: auto;
   display: grid;
@@ -16,7 +16,7 @@
   background-color: $White;
 
   @media screen and (max-width: 480px){
-    padding: 92px 16px;
+    padding: 32px 16px 16px;
   }
 
   @media screen and (max-width: 768px) {

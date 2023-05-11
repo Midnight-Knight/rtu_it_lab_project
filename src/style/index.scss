@@ -73,6 +73,16 @@ h3
   {
     font-size: 24px;
   }
+  > span
+  {
+    color: rgb(16,16,16);
+    font-weight: 100;
+    font-size: 28px;
+    @media screen and (max-width: 480px)
+    {
+      font-size: 24px;
+    }
+  }
 }
 
 h2
