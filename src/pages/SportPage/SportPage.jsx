@@ -4,7 +4,7 @@ import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
 import Photo1 from "../../image/sport1.jpg";
 import Photo2 from "../../image/sport2.jpg";
 
-export const SportPage = () => {
+export const SportPage = (props) => {
     return (
         <PagesCategorySkeleton
             HelloSection={{
@@ -24,6 +24,7 @@ export const SportPage = () => {
                 image1: Photo1,
                 image2: Photo2}}
             SectionTwo={{h5: "Карта спортивных мероприятий, города Москвы"}}
+            sport={props.sport}
         />
     )
 }
