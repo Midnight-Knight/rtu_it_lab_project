@@ -1,12 +1,13 @@
-import React from "react";
+import React, {memo} from "react";
 import Style from "./MainPage.module.css";
 import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {Category} from "../../components/Cards/Cards";
 
+const MemoizedMyMap = memo(MyMap);
+const MemoizedCategory = memo(Category);
 export const MainPage = (props) => {
-
 
     return (
         <section className={classNames(Style.MainPage,UnitedStyle.Page)}>
@@ -19,12 +20,12 @@ export const MainPage = (props) => {
             <section>
                 <h1>Категории</h1>
                 <h4>Найдите то что вам интересно</h4>
-                <Category/>
+                <MemoizedCategory/>
             </section>
             <section>
                 <h1>Интерактивная карта мероприятий</h1>
                 <h4>Карта со всеми категорий мероприятиями и информацией о них</h4>
-                <MyMap
+                <MemoizedMyMap
                     festivals={props.festivals}
                     sport={props.sport}
                     exhibitions={props.exhibitions}

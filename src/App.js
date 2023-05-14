@@ -1,4 +1,4 @@
-import React from "react";
+import React, {memo} from "react";
 import "./style/App.css";
 import {Header} from "./components/header/header";
 import {Footer} from "./components/footer/footer";
@@ -12,6 +12,8 @@ import {CitylifePage} from "./pages/CitylifePage/CitylifePage";
 import {FamilyPage} from "./pages/FamilyPage/FamilyPage";
 import {PageEvents} from "./pages/PageEvents/PageEvents";
 
+const MemoizedMainPage = memo(MainPage);
+
 function App(props) {
 
   return (
@@ -24,7 +26,7 @@ function App(props) {
                   ))}
               </Routes>
               <Routes>
-                  <Route path="/" element={<MainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
+                  <Route path="/" element={<MemoizedMainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
                   <Route path="/festivals" element={<FestivalsPage festivals={props.festivals}/>} />
                   <Route path="/sport" element={<SportPage sport={props.sport}/>} />
                   <Route path="/exhibitions" element={<ExhibitionsPage exhibitions={props.exhibitions}/>} />

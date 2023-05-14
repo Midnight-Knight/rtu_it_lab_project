@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useCallback, useMemo, useState} from "react";
 import {
     Clusterer,
     FullscreenControl,
@@ -53,28 +53,41 @@ const clustererOptions = {
 export const MyMap = (props) => {
     const [balloonIsOpen, setBalloonIsOpen] = useState(false);
 
-    const handlePlacemarkClick = () => {
+    const handlePlacemarkClick = useCallback(() => {
         setBalloonIsOpen(true);
-    };
+    },[]);
+    // eslint-disable-next-line
 
-    const handleBalloonClose = () => {
+    const handleBalloonClose = useCallback(() => {
         setBalloonIsOpen(false);
-    };
+    },[]);
+
+    const placemarkProps = useMemo(
+        () => ({
+            balloonIsOpen,
+            handlePlacemarkClick,
+            handleBalloonClose,
+        }),
+        [balloonIsOpen, handlePlacemarkClick, handleBalloonClose]
+    );
 
 
-    const festivals = FabricPropsMyPlacemark(props.festivals,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
-    const sport = FabricPropsMyPlacemark(props.sport,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
-    const art = FabricPropsMyPlacemark(props.art,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
-    const family = FabricPropsMyPlacemark(props.family,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
-    const exhibitions = FabricPropsMyPlacemark(props.exhibitions,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
-    const citylife = FabricPropsMyPlacemark(props.citylife,balloonIsOpen,handlePlacemarkClick,handleBalloonClose);
+    const festivals = useMemo(() => FabricPropsMyPlacemark(props.festivals,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose),[props.festivals,placemarkProps]);
+    const sport = useMemo(() => FabricPropsMyPlacemark(props.sport,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose), [props.sport, placemarkProps]);
+    const art = useMemo(() => FabricPropsMyPlacemark(props.art,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose),[props.art, placemarkProps]);
+    const family = useMemo(() => FabricPropsMyPlacemark(props.family,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose),[props.family, placemarkProps]);
+    const exhibitions = useMemo(() => FabricPropsMyPlacemark(props.exhibitions,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose), [props.exhibitions, placemarkProps]);
+    const citylife = useMemo(() => FabricPropsMyPlacemark(props.citylife,placemarkProps.balloonIsOpen,placemarkProps.handlePlacemarkClick,placemarkProps.handleBalloonClose), [props.citylife, placemarkProps]);
 
 
-    const mapData = {
-        center: props.coordinates === undefined ? [55.751432, 37.618883] : props.coordinates,
-        zoom: props.coordinates === undefined ? 10 : 19,
-        controls: []
-    };
+    const mapData = useMemo(
+        () => ({
+            center: props.coordinates || [55.751432, 37.618883],
+            zoom: props.coordinates ? 19 : 10,
+            controls: [],
+        }),
+        [props.coordinates]
+    );
 
     return (
         <div className={Style.InteractiveMap}>
@@ -84,12 +97,7 @@ export const MyMap = (props) => {
                    }}>
                 <Map width={"100%"} height={"100%"} options={mapOptions} modules={["clusterer.addon.balloon"]} state={mapData}>
                     <Clusterer options={clustererOptions}>
-                        {festivals.map((elem) => (elem))}
-                        {sport.map((elem) => (elem))}
-                        {art.map((elem) => (elem))}
-                        {family.map((elem) => (elem))}
-                        {exhibitions.map((elem) => (elem))}
-                        {citylife.map((elem) => (elem))}
+                        {[...festivals, ...sport, ...art, ...family, ...exhibitions, ...citylife]}
                     </Clusterer>
                     <GeolocationControl options={{ float: "left" }} />
                     <FullscreenControl options={{ float: "right"}}/>
