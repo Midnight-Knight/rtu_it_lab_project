@@ -5,7 +5,7 @@ import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {Category} from "../../components/Cards/Cards";
 
-export const MainPage = () => {
+export const MainPage = (props) => {
 
 
     return (
@@ -24,7 +24,14 @@ export const MainPage = () => {
             <section>
                 <h1>Интерактивная карта мероприятий</h1>
                 <h4>Карта со всеми категорий мероприятиями и информацией о них</h4>
-                <MyMap/>
+                <MyMap
+                    festivals={props.festivals}
+                    sport={props.sport}
+                    exhibitions={props.exhibitions}
+                    family={props.family}
+                    citylife={props.citylife}
+                    art={props.art}
+                />
             </section>
             <section>
                 <h1>Прямые трансляции</h1>
