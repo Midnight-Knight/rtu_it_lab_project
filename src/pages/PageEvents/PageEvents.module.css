@@ -17,6 +17,25 @@
 .PageEvent > section:nth-child(2) > *, .PageEvent > section:nth-child(3) > * {
   color: rgb(255, 255, 255);
 }
+.PageEvent > section:nth-child(3) {
+  background-color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(3) > * {
+  color: rgb(14, 14, 14);
+}
+
+.BlockStream {
+  width: 100%;
+  height: 70vh;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid rgb(14, 14, 14);
+  background-color: rgb(222, 229, 235);
+}
 
 .MarginS {
   margin-bottom: 8px;

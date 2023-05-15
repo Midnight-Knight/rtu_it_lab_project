@@ -1,12 +1,31 @@
-import React, {memo} from "react";
+import React, {memo, useEffect} from "react";
 import Style from "./PageEvents.module.css";
 import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
+import {useLocation} from "react-router";
 
 const MemoizedMap = memo(MyMap);
 
 export const PageEvents = memo(({dataJSON}) => {
+        const location = useLocation();
+
+        useEffect(() => {
+            // Получение хеша из URL-адреса
+            const hash = location.hash;
+
+            // Проверка, что хеш не пустой
+            if (hash) {
+                // Поиск элемента с указанным ID, соответствующим хешу
+                const targetElement = document.querySelector(hash);
+
+                // Проверка, что элемент найден
+                if (targetElement) {
+                    // Выполнение прокрутки к элементу
+                    targetElement.scrollIntoView();
+                }
+            }
+        }, [location]);
     const data = dataJSON;
 
     return (
@@ -36,6 +55,12 @@ export const PageEvents = memo(({dataJSON}) => {
             </section>
             <section id="stream">
                 <h1>Прямая траснляция мероприятия</h1>
+                {
+                    data.stream === false ? <div className={Style.BlockStream}><h1>Трансляция ещё не началась</h1></div> : <iframe className={Style.BlockStream} src={data.stream}
+                                                             title="YouTube video player" frameBorder="0"
+                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                             allowFullScreen></iframe>
+                }
             </section>
         </section>
     )

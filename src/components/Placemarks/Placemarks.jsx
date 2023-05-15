@@ -51,7 +51,6 @@ export const MyPlacemark = (props) => {
 
     const placemarkOptions = PlacemarkCategory(props.balloon.category, props.active);
 
-
     return (
         <Placemark
             options={Object.assign({},PlacemarkOptionsDefault, placemarkOptions)}
@@ -63,7 +62,8 @@ export const MyPlacemark = (props) => {
             properties={{
                 balloonContentHeader: `<h6>${props.balloon.title}</h6>`,
                 balloonContentBody: `<p>${props.balloon.address}</p><p>${props.balloon.date}</p>`,
-                balloonContentFooter: `<p>${props.balloon.category}</p><a href=${props.balloon.link}>Перейти на страницу</a>`,
+                balloonContentFooter: props.active === true ? `<p>${props.balloon.category}</p><a href=${props.balloon.link}>Перейти на страницу</a><br/><a href=${props.balloon.link+"#stream"}>Посмотреть трансляцию</a>` :
+                `<p>${props.balloon.category}</p><a href=${props.balloon.link}>Перейти на страницу</a>`,
                 hintContent: props.balloon.title,
             }}
             state={{

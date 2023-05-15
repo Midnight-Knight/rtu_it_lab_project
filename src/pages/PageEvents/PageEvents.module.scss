@@ -24,7 +24,26 @@
         color: $White;
       }
     }
+    > &:nth-child(3)
+    {
+      background-color: $White;
+      > *
+      {
+        color: $Black;
+      }
+    }
   }
+}
+
+.BlockStream
+{
+  width: 100%;
+  height: 70vh;
+  border-radius: 16px;
+  overflow: hidden;
+  @include FlexColumnCenterCenter();
+  border: 4px solid $Black;
+  background-color: $LowWhite;
 }
 
 .MarginS
