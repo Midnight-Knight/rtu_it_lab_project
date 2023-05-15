@@ -61,9 +61,9 @@ export const MyPlacemark = (props) => {
             onClose={props.balloon.balloonClose}
             modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
             properties={{
-                balloonContentHeader: `<a href=${props.balloon.link}><h6>${props.balloon.title}</h6></a>`,
+                balloonContentHeader: `<h6>${props.balloon.title}</h6>`,
                 balloonContentBody: `<p>${props.balloon.address}</p><p>${props.balloon.date}</p>`,
-                balloonContentFooter: props.balloon.category,
+                balloonContentFooter: `<p>${props.balloon.category}</p><a href=${props.balloon.link}>Перейти на страницу</a>`,
                 hintContent: props.balloon.title,
             }}
             state={{

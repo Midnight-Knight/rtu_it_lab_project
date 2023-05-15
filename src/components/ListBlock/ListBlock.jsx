@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useMemo, useState} from "react";
 import Style from "./ListBlock.module.css";
 
-export const ListBlock = () => {
-    const [List, SetList] = useState();
+export const ListBlock = (props) => {
+    const List = useMemo(() =>
+        props.array
+    ,[props.array]);
 
 
     return (

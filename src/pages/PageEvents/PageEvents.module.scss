@@ -19,7 +19,7 @@
       background-color: $Black;
       @include FlexColumnBetweenStart();
       min-height: 100vh;
-      *
+      > *
       {
         color: $White;
       }

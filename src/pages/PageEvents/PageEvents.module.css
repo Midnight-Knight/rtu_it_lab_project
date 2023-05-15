@@ -14,7 +14,7 @@
   align-items: flex-start;
   min-height: 100vh;
 }
-.PageEvent > section:nth-child(2) *, .PageEvent > section:nth-child(3) * {
+.PageEvent > section:nth-child(2) > *, .PageEvent > section:nth-child(3) > * {
   color: rgb(255, 255, 255);
 }
 
