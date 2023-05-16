@@ -14,48 +14,116 @@
 
 .ElementBlock {
   padding: 16px;
-  gap: 16px;
   width: 100%;
-  height: auto;
+  gap: 16px;
   background-color: rgb(204, 223, 241);
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.ElementBlock > div:nth-child(1) {
-  width: 10%;
-  gap: 16px;
-}
-.ElementBlock > div:nth-child(2) {
-  gap: 8px;
-  width: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.ElementBlock > div:nth-child(2) > div:nth-child(1) {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.ElementBlock > div:nth-child(2) > div:nth-child(1) > * {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: rgb(14, 14, 14);
-}
-.ElementBlock > div:nth-child(2) > div:nth-child(2) {
-  gap: 16px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
 }
+@media screen and (max-width: 480px) {
+  .ElementBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
 
-.ElementImgActive {
-  border-radius: 100%;
+.ElementText {
+  width: auto;
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ElementText > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ElementText > div:nth-child(1) > * {
+  height: auto;
+  width: auto;
+  color: rgb(14, 14, 14);
+}
+.ElementText > div:nth-child(2) {
+  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ElementImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 96px;
+  background-color: rgb(14, 14, 14);
+  width: 96px;
+  height: 96px;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.ElementPassive {
+  background-color: rgb(127, 127, 127);
+}
+
+.ElementImgFestivals {
+  background-image: url("./../../image/festivals_svg.svg");
+}
+
+.ElementImgActiveFestivals {
+  background-color: rgb(176, 55, 196);
+}
+
+.ElementImgSport {
+  background-image: url("./../../image/sport_svg.svg");
+}
+
+.ElementImgActiveSport {
+  background-color: rgb(63, 195, 60);
+}
+
+.ElementImgArt {
+  background-image: url("./../../image/art_svg.svg");
+}
+
+.ElementImgActiveArt {
+  background-color: rgb(224, 27, 27);
+}
+
+.ElementImgCitylife {
+  background-image: url("./../../image/citylife_svg.svg");
+}
+
+.ElementImgActiveCitylife {
+  background-color: rgb(13, 172, 182);
+}
+
+.ElementImgExhibitions {
+  background-image: url("./../../image/exhibitions_svg.svg");
+}
+
+.ElementImgActiveExhibitions {
+  background-color: rgb(1, 7, 157);
+}
+
+.ElementImgFamily {
+  background-image: url("./../../image/family_svg.svg");
+}
+
+.ElementImgActiveFamily {
+  background-color: rgb(215, 140, 28);
 }
 
 /*# sourceMappingURL=ListBlock.module.css.map */

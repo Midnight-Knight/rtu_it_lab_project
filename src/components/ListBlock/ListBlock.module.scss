@@ -15,40 +15,112 @@
 .ElementBlock
 {
   padding: 16px;
-  gap: 16px;
   width: 100%;
-  height: auto;
+  gap: 16px;
   background-color: $LowWhite;
-  @include FlexRowStartStart();
-  > div:nth-child(1)
-  {
-    width: 10%;
-    gap: 16px;
-  }
-  > div:nth-child(2)
-  {
-    gap: 8px;
-    > div:nth-child(1)
-    {
-      > *
-      {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        color: $Black;
-      }
-      @include FlexColumnStartStart();
-    }
-    > div:nth-child(2)
-    {
-      gap: 16px;
-      @include FlexRowStartCenter();
-    }
-    width: 90%;
+  @include FlexRowStartCenter();
+  @media screen and (max-width: 480px) {
     @include FlexColumnStartStart();
   }
 }
 
-.ElementImgActive
+.ElementText
 {
-  border-radius: 100%;
+  width: auto;
+  gap: 8px;
+  > div:nth-child(1)
+  {
+    > *
+    {
+      height: auto;
+      width: auto;
+      color: $Black;
+    }
+    @include FlexColumnStartStart();
+  }
+  > div:nth-child(2)
+  {
+    gap: 16px;
+    @include FlexRowStartCenter();
+    flex-wrap: wrap;
+  }
+  @include FlexColumnStartStart();
+}
+
+.ElementImg
+{
+  @include FlexColumnCenterCenter();
+  border-radius: 96px;
+  background-color: $Black;
+  width: 96px;
+  height: 96px;
+  background-size: 70%;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.ElementPassive
+{
+  background-color: $Gray;
+}
+
+.ElementImgFestivals
+{
+  background-image: url("./../../image/festivals_svg.svg");
+}
+
+.ElementImgActiveFestivals
+{
+  background-color: $Purple;
+}
+
+.ElementImgSport
+{
+  background-image: url("./../../image/sport_svg.svg");
+}
+
+.ElementImgActiveSport
+{
+  background-color: $Green;
+}
+
+.ElementImgArt
+{
+  background-image: url("./../../image/art_svg.svg");
+}
+
+.ElementImgActiveArt
+{
+  background-color: $Red;
+}
+
+.ElementImgCitylife
+{
+  background-image: url("./../../image/citylife_svg.svg");
+}
+
+.ElementImgActiveCitylife
+{
+  background-color: $BlueLait;
+}
+
+.ElementImgExhibitions
+{
+  background-image: url("./../../image/exhibitions_svg.svg");
+}
+
+.ElementImgActiveExhibitions
+{
+  background-color: $Blue;
+}
+
+.ElementImgFamily
+{
+  background-image: url("./../../image/family_svg.svg");
+}
+
+.ElementImgActiveFamily
+{
+  background-color: $Yellow;
 }

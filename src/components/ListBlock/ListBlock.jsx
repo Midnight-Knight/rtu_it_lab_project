@@ -1,13 +1,44 @@
 import React, {useMemo} from "react";
 import Style from "./ListBlock.module.css";
 import {ButtonTextLink} from "../buttons/buttons";
+import classNames from "classnames";
 
 const ElementBlock = (props) => {
 
+    let StyleType;
+    let StyleTypeActive;
+    switch (props.event.TypeEvent)
+    {
+        case "Художественные выставки":
+            StyleType = Style.ElementImgArt;
+            StyleTypeActive = Style.ElementImgActiveArt;
+            break;
+        case "Столичная жизнь":
+            StyleType = Style.ElementImgCitylife;
+            StyleTypeActive = Style.ElementImgActiveCitylife;
+            break;
+        case "Профессиональные выставки и форумы":
+            StyleType = Style.ElementImgExhibitions;
+            StyleTypeActive = Style.ElementImgActiveExhibitions;
+            break;
+        case "Отдых с детьми":
+            StyleType = Style.ElementImgFamily;
+            StyleTypeActive = Style.ElementImgActiveFamily;
+            break;
+        case "Фестивали и праздники":
+            StyleType = Style.ElementImgFestivals;
+            StyleTypeActive = Style.ElementImgActiveFestivals;
+            break;
+        case "Спорт":
+            StyleType = Style.ElementImgSport;
+            StyleTypeActive = Style.ElementImgActiveSport;
+    }
+
+
     return (
         <div className={Style.ElementBlock}>
-            <div/>
-            <div>
+            <div className={classNames(Style.ElementImg,StyleType, props.event.Status === 1 ? StyleTypeActive : props.event.Status === 2 ? Style.ElementPassive : undefined)}/>
+            <div className={Style.ElementText}>
                 <div>
                     <h4>{props.event.Name}</h4>
                     <h6>{props.event.Address}</h6>
