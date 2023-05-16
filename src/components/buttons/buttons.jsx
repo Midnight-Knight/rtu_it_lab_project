@@ -56,6 +56,14 @@ export const ButtonText = (props) => {
     )
 }
 
+export const ButtonTextLink = (props) => {
+    return (
+        <a className={classNames(Style.Button, Style.ButtonText)} href={props.href}>
+            <h6>{props.text}</h6>
+        </a>
+    )
+}
+
 export const ButtonTextH4 = (props) => {
     return (
         <button className={classNames(Style.Button, Style.ButtonText)} onClick={props.func}>

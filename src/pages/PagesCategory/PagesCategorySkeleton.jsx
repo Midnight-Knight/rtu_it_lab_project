@@ -31,7 +31,7 @@ export const PagesCategorySkeleton = (props) => {
             </section>
             <section className={Style.SectionThree}>
                 <h2>Список мероприятий</h2>
-                <ListBlock/>
+                <ListBlock festivals={props.festivals} sport={props.sport} exhibitions={props.exhibitions} family={props.family} citylife={props.citylife} art={props.art}/>
             </section>
         </section>
     )

@@ -1,9 +1,61 @@
 .ListBlock {
   width: 100%;
-  height: 65vh;
+  height: 70vh;
   overflow-y: scroll;
   border-radius: 16px;
   background-color: rgb(255, 255, 255);
+  overflow-x: hidden;
+  gap: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.ElementBlock {
+  padding: 16px;
+  gap: 16px;
+  width: 100%;
+  height: auto;
+  background-color: rgb(204, 223, 241);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ElementBlock > div:nth-child(1) {
+  width: 10%;
+  gap: 16px;
+}
+.ElementBlock > div:nth-child(2) {
+  gap: 8px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ElementBlock > div:nth-child(2) > div:nth-child(1) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.ElementBlock > div:nth-child(2) > div:nth-child(1) > * {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(14, 14, 14);
+}
+.ElementBlock > div:nth-child(2) > div:nth-child(2) {
+  gap: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.ElementImgActive {
+  border-radius: 100%;
 }
 
 /*# sourceMappingURL=ListBlock.module.css.map */

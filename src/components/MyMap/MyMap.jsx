@@ -25,6 +25,7 @@ const FabricPropsMyPlacemark = (JsonObject, balloonIsOpen, handleBalloonClose, h
         {
             if (JsonObject[i].Status !== 2) {
                 ArrayObject.push(<MyPlacemark
+                    key={"MyPlacemark"+JsonObject[i].ID}
                     coordinates={JsonObject[i].coordinates}
                     active={JsonObject[i].Status === 1 ? true : false}
                     balloon={{
