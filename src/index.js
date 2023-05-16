@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import "./style/index.css";
 import App from './App';
 import axios from "axios";
+import {setAccountCookie, checkAccount, getCookieExpiration} from "./cookie";
 
 
 async function start()
@@ -19,6 +20,9 @@ async function start()
             return await loadData(link);
         }
     }
+
+    setAccountCookie("login2", "password2", getCookieExpiration(3));
+    console.log(checkAccount());
 
     const festivals = await loadData("http://localhost:2999/api/get/festivals");
     const art = await loadData("http://localhost:2999/api/get/art");
