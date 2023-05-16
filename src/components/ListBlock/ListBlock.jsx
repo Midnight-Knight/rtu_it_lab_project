@@ -77,7 +77,35 @@ const CreateList = (array) => {
 
 export const ListBlock = (props) => {
     const List = useMemo(() =>
-            [...CreateList(props.festivals), ...CreateList(props.art), ...CreateList(props.citylife), ...CreateList(props.sport), ...CreateList(props.family), ...CreateList(props.exhibitions)]
+        {
+            let UnitedArray = [];
+            if (props.festivals !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.festivals];
+            }
+            if (props.sport !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.sport];
+            }
+            if (props.exhibitions !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.exhibitions];
+            }
+            if (props.art !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.art];
+            }
+            if (props.citylife !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.citylife];
+            }
+            if (props.family !== undefined)
+            {
+                UnitedArray = [...UnitedArray, ...props.family];
+            }
+            console.log(UnitedArray);
+            return CreateList(UnitedArray)
+        }
     ,[props.festivals, props.art, props.citylife, props.sport, props.family, props.exhibitions]);
 
 

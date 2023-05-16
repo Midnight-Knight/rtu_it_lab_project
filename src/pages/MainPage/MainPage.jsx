@@ -4,6 +4,7 @@ import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {Category} from "../../components/Cards/Cards";
+import {ListBlock} from "../../components/ListBlock/ListBlock";
 
 const MemoizedMyMap = memo(MyMap);
 const MemoizedCategory = memo(Category);
@@ -33,6 +34,16 @@ export const MainPage = (props) => {
                     citylife={props.citylife}
                     art={props.art}
                 />
+            </section>
+            <section>
+                <h1>Список мероприятий</h1>
+                <h4>Список со всеми категорий мероприятиями в порядке их текущего статуса</h4>
+                <ListBlock festivals={props.festivals}
+                           sport={props.sport}
+                           exhibitions={props.exhibitions}
+                           family={props.family}
+                           citylife={props.citylife}
+                           art={props.art}/>
             </section>
             <section>
                 <h1>Прямые трансляции</h1>
