@@ -12,7 +12,16 @@ import {CitylifePage} from "./pages/CitylifePage/CitylifePage";
 import {FamilyPage} from "./pages/FamilyPage/FamilyPage";
 import {PageEvents} from "./pages/PageEvents/PageEvents";
 
+const MemoizedHeader = memo(Header);
+const MemoizedFooter = memo(Footer);
 const MemoizedMainPage = memo(MainPage);
+const MemoizedFestivalsPage = memo(FestivalsPage);
+const MemoizedSportPage = memo(SportPage);
+const MemoizedExhibitionsPage = memo(ExhibitionsPage);
+const MemoizedArtPage = memo(ArtPage);
+const MemoizedCitylifePage = memo(CitylifePage);
+const MemoizedFamilyPage = memo(FamilyPage);
+const MemoizedEventsPage = memo(PageEvents);
 
 function App(props) {
 
@@ -20,39 +29,39 @@ function App(props) {
       <BrowserRouter>
           <div className="App">
               <Routes>
-                  <Route path="*" element={<Header Animation={false}/>}/>
+                  <Route path="*" element={<MemoizedHeader Animation={false}/>}/>
                   {['/', '/festivals', '/sport', '/exhibitions', '/art', '/citylife', '/family'].map((path) => (
-                      <Route path={path} key={path} element={<Header />} />
+                      <Route path={path} key={path} element={<MemoizedHeader />} />
                   ))}
               </Routes>
               <Routes>
                   <Route path="/" element={<MemoizedMainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
-                  <Route path="/festivals" element={<FestivalsPage festivals={props.festivals}/>} />
-                  <Route path="/sport" element={<SportPage sport={props.sport}/>} />
-                  <Route path="/exhibitions" element={<ExhibitionsPage exhibitions={props.exhibitions}/>} />
-                  <Route path="/art" element={<ArtPage art={props.art}/>}/>
-                  <Route path="/citylife" element={<CitylifePage citylife={props.citylife}/>}/>
-                  <Route path="/family" element={<FamilyPage family={props.family}/>}/>
+                  <Route path="/festivals" element={<MemoizedFestivalsPage festivals={props.festivals}/>} />
+                  <Route path="/sport" element={<MemoizedSportPage sport={props.sport}/>} />
+                  <Route path="/exhibitions" element={<MemoizedExhibitionsPage exhibitions={props.exhibitions}/>} />
+                  <Route path="/art" element={<MemoizedArtPage art={props.art}/>}/>
+                  <Route path="/citylife" element={<MemoizedCitylifePage citylife={props.citylife}/>}/>
+                  <Route path="/family" element={<MemoizedFamilyPage family={props.family}/>}/>
                   {props.festivals.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
                   {props.art.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
                   {props.sport.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
                   {props.family.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
                   {props.citylife.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
                   {props.exhibitions.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<PageEvents dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
               </Routes>
-              <Footer/>
+              <MemoizedFooter/>
           </div>
       </BrowserRouter>
   );

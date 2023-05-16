@@ -1,10 +1,12 @@
-import React from "react";
+import React, {memo} from "react";
 import Style from "./PagesCategorySkeleton.module.css";
 import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {ListBlock} from "../../components/ListBlock/ListBlock";
 
+const MemoizedMyMap = memo(MyMap);
+const MemoizedListBlock = memo(ListBlock);
 export const PagesCategorySkeleton = (props) => {
     return (
         <section className={UnitedStyle.Page}>
@@ -27,21 +29,21 @@ export const PagesCategorySkeleton = (props) => {
             <section className={Style.SectionTwo}>
                 <h2>Интерактивная карта</h2>
                 <h5>{props.SectionTwo.h5}</h5>
-                <MyMap festivals={props.festivals}
-                       sport={props.sport}
-                       exhibitions={props.exhibitions}
-                       family={props.family}
-                       citylife={props.citylife}
-                       art={props.art}/>
+                <MemoizedMyMap festivals={props.festivals}
+                               sport={props.sport}
+                               exhibitions={props.exhibitions}
+                               family={props.family}
+                               citylife={props.citylife}
+                               art={props.art}/>
             </section>
             <section className={Style.SectionThree}>
                 <h2>Список мероприятий</h2>
-                <ListBlock festivals={props.festivals}
-                           sport={props.sport}
-                           exhibitions={props.exhibitions}
-                           family={props.family}
-                           citylife={props.citylife}
-                           art={props.art}/>
+                <MemoizedListBlock festivals={props.festivals}
+                                   sport={props.sport}
+                                   exhibitions={props.exhibitions}
+                                   family={props.family}
+                                   citylife={props.citylife}
+                                   art={props.art}/>
             </section>
         </section>
     )

@@ -8,6 +8,7 @@ import {ListBlock} from "../../components/ListBlock/ListBlock";
 
 const MemoizedMyMap = memo(MyMap);
 const MemoizedCategory = memo(Category);
+const MemoizedListBlock = memo(ListBlock);
 export const MainPage = (props) => {
 
     return (
@@ -38,12 +39,12 @@ export const MainPage = (props) => {
             <section>
                 <h1>Список мероприятий</h1>
                 <h4>Список со всеми категорий мероприятиями в порядке их текущего статуса</h4>
-                <ListBlock festivals={props.festivals}
-                           sport={props.sport}
-                           exhibitions={props.exhibitions}
-                           family={props.family}
-                           citylife={props.citylife}
-                           art={props.art}/>
+                <MemoizedListBlock festivals={props.festivals}
+                                   sport={props.sport}
+                                   exhibitions={props.exhibitions}
+                                   family={props.family}
+                                   citylife={props.citylife}
+                                   art={props.art}/>
             </section>
             <section>
                 <h1>Прямые трансляции</h1>

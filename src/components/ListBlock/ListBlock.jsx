@@ -25,13 +25,14 @@ const ElementBlock = (props) => {
             StyleType = Style.ElementImgFamily;
             StyleTypeActive = Style.ElementImgActiveFamily;
             break;
-        case "Фестивали и праздники":
+        case "Фестивали и праздники": default:
             StyleType = Style.ElementImgFestivals;
             StyleTypeActive = Style.ElementImgActiveFestivals;
             break;
         case "Спорт":
             StyleType = Style.ElementImgSport;
             StyleTypeActive = Style.ElementImgActiveSport;
+            break;
     }
 
 
@@ -103,7 +104,6 @@ export const ListBlock = (props) => {
             {
                 UnitedArray = [...UnitedArray, ...props.family];
             }
-            console.log(UnitedArray);
             return CreateList(UnitedArray)
         }
     ,[props.festivals, props.art, props.citylife, props.sport, props.family, props.exhibitions]);

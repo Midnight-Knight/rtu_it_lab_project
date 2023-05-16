@@ -1,12 +1,13 @@
-import React from "react";
+import React, {memo} from "react";
 import Style from "./ArtPage.module.css";
 import {PagesCategorySkeleton} from "../PagesCategory/PagesCategorySkeleton";
 import Photo1 from "../../image/art1.jpg";
 import Photo2 from "../../image/art2.jpg";
 
+const MemoizedPage = memo(PagesCategorySkeleton);
 export const ArtPage = (props) => {
     return (
-        <PagesCategorySkeleton
+        <MemoizedPage
             HelloSection={{
                 style: Style.ImageHelloSection, h1: "Художественные выставки"}}
             SectionOne={{
