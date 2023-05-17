@@ -14,7 +14,7 @@ const API = async (email = "", password = "") => {
         {
             setAccountCookie(email, password, getCookieExpiration(3));
         }
-        response = await data.data;
+        response = await data.data.response;
     }
     catch (e)
     {
@@ -28,13 +28,22 @@ export const PageAuthorization = (props) => {
     const [Password, SetPassword] = useState("");
     const [Error, SetError] = useState(false);
 
+    const handleConfirmation = async () => {
+        const response = await API(Email, Password);
+        if (response === true) {
+            props.funcAut();
+        } else {
+            SetError(true);
+        }
+    };
+
     return (
         <section className={Style.Page}>
             <div className={Style.BlockAuthorization}>
                 <h3>Авторизация</h3>
-                <MyInputs active={Error} change={(event) => SetEmail(event.target.value)} type={"email"}/>
-                <MyInputs active={Error} change={(event) => SetPassword(event.target.value)} type={"password"}/>
-                <ButtonText widthAuto={true} text="Войти" func={() => (API(Email, Password) === true ? props.funcAut : SetError(true))}/>
+                <MyInputs active={Error} valueHeader="Почта" valueFooter="Введите свою электронную почту" change={(event) => SetEmail(event.target.value)} type={"email"}/>
+                <MyInputs active={Error} valueHeader="Пароль" valueFooter="Введите свой пароль" change={(event) => SetPassword(event.target.value)} type={"password"}/>
+                <ButtonText widthAuto={true} text="Войти" func={() => handleConfirmation()}/>
                 <ButtonText widthAuto={true} text="Регистрация" func={props.funcReg}/>
                 <ButtonText widthAuto={true} text="Восстановление пароля" func={props.funcRec}/>
             </div>
