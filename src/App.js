@@ -11,6 +11,7 @@ import {ArtPage} from "./pages/ArtPage/ArtPage";
 import {CitylifePage} from "./pages/CitylifePage/CitylifePage";
 import {FamilyPage} from "./pages/FamilyPage/FamilyPage";
 import {PageEvents} from "./pages/PageEvents/PageEvents";
+import {PersonalAccountPage} from "./pages/PersonalAccountPage/PersonalAccountPage";
 
 const MemoizedHeader = memo(Header);
 const MemoizedFooter = memo(Footer);
@@ -35,6 +36,7 @@ function App(props) {
                   ))}
               </Routes>
               <Routes>
+                  <Route path='test' element={<PersonalAccountPage/>}/>
                   <Route path="/" element={<MemoizedMainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
                   <Route path="/festivals" element={<MemoizedFestivalsPage festivals={props.festivals}/>} />
                   <Route path="/sport" element={<MemoizedSportPage sport={props.sport}/>} />
@@ -61,7 +63,10 @@ function App(props) {
                       <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
                   ))}
               </Routes>
-              <MemoizedFooter/>
+              <Routes>
+                  <Route path="/test" element={<></>}/>
+                  <Route path="*" element={<MemoizedFooter/>}/>
+              </Routes>
           </div>
       </BrowserRouter>
   );

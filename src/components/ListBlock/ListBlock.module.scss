@@ -4,11 +4,11 @@
 {
   width: 100%;
   height: 70vh;
-  overflow-y: scroll;
+  overflow-y: overlay;
   border-radius: 16px;
   background-color: $White;
   overflow-x: hidden;
-  gap: 4px;
+  gap: 6px;
   @include FlexColumnStartStart();
 }
 

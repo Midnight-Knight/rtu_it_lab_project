@@ -8,8 +8,8 @@ import ExhibitionsSVG from "./../../image/exhibitions_svg.svg";
 import ArtSVG from "./../../image/art_svg.svg";
 import CitylifeSVG from "./../../image/citylife_svg.svg";
 import FamilySVG from "./../../image/family_svg.svg";
-
 export const Header = (props) => {
+
     const [NavButtonClick, SetNavButtonClick] = useState(false);
     const [HeaderPositionY, SetHeaderPositionY] = useState(props.Animation === false ? 51 : window.scrollY);
     const linkPages = ["/festivals", "/sport", "/exhibitions", "/art", "/citylife", "/family"];

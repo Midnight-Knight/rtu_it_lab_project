@@ -6,6 +6,13 @@
   @include FlexRowBetweenCenter();
 }
 
+.ButtonWidthAuto
+{
+  padding: 10px 24px;
+  @include FlexRowCenterCenter();
+  width: 100%;
+}
+
 .ButtonLogo
 {
   background-image: url("./../../image/moscow-svgrepo-com.svg");

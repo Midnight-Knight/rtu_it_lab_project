@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import "./style/index.css";
 import App from './App';
 import axios from "axios";
-import {setAccountCookie, checkAccount, getCookieExpiration} from "./cookie";
+import {checkAccount} from "./cookie";
 
 
 async function start()
@@ -21,9 +21,7 @@ async function start()
         }
     }
 
-    setAccountCookie("login2", "password2", getCookieExpiration(3));
-    console.log(checkAccount());
-
+    const account = checkAccount();
     const festivals = await loadData("http://localhost:2999/api/get/festivals");
     const art = await loadData("http://localhost:2999/api/get/art");
     const sport = await loadData("http://localhost:2999/api/get/sports");
@@ -34,7 +32,7 @@ async function start()
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <App festivals={festivals} art={art} sport={sport} citylife={citylife} family={family} exhibitions={exhibitions}/>
+            <App account={account} festivals={festivals} art={art} sport={sport} citylife={citylife} family={family} exhibitions={exhibitions}/>
         </React.StrictMode>
     );
 }

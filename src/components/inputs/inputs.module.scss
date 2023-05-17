@@ -1,0 +1,77 @@
+@import "./../../style/Color_And_Mixin";
+
+.Inputs
+{
+  position: relative;
+  @include FlexColumnStartStart();
+  height: 80px;
+  width: auto;
+}
+
+.InputsBlock
+{
+  position: relative;
+  height: 56px;
+  min-width: 280px;
+  width: calc(280px + 1vw);
+  padding: 18px 16px;
+  border-radius: 8px;
+  background-color: $White;
+  color: $Black;
+  @include FlexRowStartCenter();
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  outline: 1px solid rgba(0,0,0,0);
+  transition: 0.5s outline;
+}
+
+.InputsActiveBlue
+{
+  caret-color: $Blue;
+  &:active,&:focus
+  {
+    outline: 1px solid $Blue;
+  }
+}
+
+.InputsActiveRed
+{
+  caret-color: $Red;
+  &:active,&:focus
+  {
+    outline: 1px solid $Red;
+  }
+}
+
+.InputsHeader
+{
+  z-index: 2;
+  position: absolute;
+  top: -11px;
+  left: 13.5px;
+  height: 22px;
+  padding: 4px;
+  width: auto;
+  background-color: $White;
+  color: $Black;
+  @include FlexRowCenterCenter();
+  font-size: 12px;
+}
+
+.InputsFooter
+{
+  position: relative;
+  height: 24px;
+  padding: 4px 16px 6px;
+  @include FlexRowStartCenter();
+  font-size: 12px;
+  color: $Black;
+  background-color: rgba(0,0,0,0);
+}
+
+.InputsFooterActiveRed
+{
+  color: $Red;
+}
+
