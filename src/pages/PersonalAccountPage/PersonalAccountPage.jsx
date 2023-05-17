@@ -6,6 +6,7 @@ import {PageAuthorization} from "./PageAuthorization/PageAuthorization";
 import {PageRegistration} from "./PageRegistration/PageRegistration";
 import {PageConfirmationRegistration} from "./PageConfirmationRegistration/PageConfirmationRegistration";
 import {checkAccount} from "../../cookie";
+import {PageRecovery} from "./PageRecovery/PageRecovery";
 
 export const PersonalAccountPage = () => {
     const [StatusAccount, SetStatusAccount] = useState(checkAccount() === undefined ? 1 : 0);
@@ -23,15 +24,12 @@ export const PersonalAccountPage = () => {
                         <PageConfirmationRegistration func={() => SetStatusAccount(0)}/>
                     )
                 case 4:
+                    return (
+                        <PageRecovery func={() => SetStatusAccount(5)}/>
+                    )
                 case 5:
                     return (
-                        <section className={Style.Page}>
-                            <div className={Style.BlockAuthorization}>
-                                <h3>Подтверждение</h3>
-                                <MyInputs type={"password"}/>
-                                <ButtonText widthAuto={true} text="Подтвердить почту" func={() => SetStatusAccount(1)}/>
-                            </div>
-                        </section>
+                        <></>
                     )
                 case 6:
                     return (
