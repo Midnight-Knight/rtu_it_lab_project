@@ -9,8 +9,8 @@ import {setAccountCookie, getCookieExpiration} from "../../../cookie";
 const API = async (email = "", password = "") => {
     let response;
     try {
-        const data = await axios.post('/authorization',{email: email, password: password});
-        if (data.data === true)
+        const data = await axios.post('http://localhost:2999/authorization',{email: email, password: password});
+        if (data.data.response === true)
         {
             setAccountCookie(email, password, getCookieExpiration(3));
         }

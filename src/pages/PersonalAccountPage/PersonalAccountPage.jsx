@@ -3,6 +3,7 @@ import Style from "./PersonalAccountPage.module.css";
 import {MyInputs} from "../../components/inputs/inputs";
 import {ButtonText} from "../../components/buttons/buttons";
 import {PageAuthorization} from "./PageAuthorization/PageAuthorization";
+import {PageRegistration} from "./PageRegistration/PageRegistration";
 
 export const PersonalAccountPage = (props) => {
     const [StatusAccount, SetStatusAccount] = useState(props.account === undefined ? 1 : 0);
@@ -13,16 +14,8 @@ export const PersonalAccountPage = (props) => {
             {
                 case 2:
                     return (
-                        <section className={Style.Page}>
-                            <div className={Style.BlockAuthorization}>
-                                <h3>Регистрация</h3>
-                                <MyInputs type={"email"}/>
-                                <MyInputs type={"password"}/>
-                                <MyInputs type={"password"}/>
-                                <ButtonText widthAuto={true} text="Отправить код на почту" func={() => SetStatusAccount(5)}/>
-                            </div>
-                        </section>
-                    )
+                        <PageRegistration func={() => SetStatusAccount(5)}/>
+                        )
                 case 3:
                     return (
                         <section className={Style.Page}>
