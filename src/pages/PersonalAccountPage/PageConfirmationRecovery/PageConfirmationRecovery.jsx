@@ -4,7 +4,7 @@ import {MyInputs} from "../../../components/inputs/inputs";
 import {ButtonText} from "../../../components/buttons/buttons";
 import {Server} from "../../../Server";
 
-export const PageConfirmationRegistration = (props) => {
+export const PageConfirmationRecovery = (props) => {
     const [Code, SetCode] = useState(undefined);
     const [Input, SetInput] = useState("");
     const [Error, SetError] = useState(false);
@@ -13,7 +13,7 @@ export const PageConfirmationRegistration = (props) => {
     useEffect(() => {
         if (Code !== undefined)
         {
-            Server.message(sessionStorage.getItem('email'),"Регистрация аккаунта","Ваш индивидуальный код для регистрации аккаунта: "+Code);
+            Server.message(sessionStorage.getItem('email'),"Восстановление пароля","Ваш индивидуальный код для регистрации аккаунта: "+Code);
         }
     }, [Code])
 
@@ -23,8 +23,7 @@ export const PageConfirmationRegistration = (props) => {
     }, [Input])
 
     const handleConfirmation = async () => {
-        const response = await Server.registration(Number(Input), Code);
-        if (response === true) {
+        if (Code === Number(Input) && Code !== undefined) {
             props.func();
         } else {
             SetText("Ошибка! Код неверный!");

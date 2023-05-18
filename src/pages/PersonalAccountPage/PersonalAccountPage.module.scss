@@ -10,9 +10,16 @@
 
 .BlockAuthorization
 {
-  padding: 16px 32px;
-  gap: 16px;
+  width: auto;
+  padding: 24px 32px;
+  gap: 20px;
   border-radius: 16px;
   background-color: $LowWhite;
   @include FlexColumnStartStart();
+  > h3
+  {
+    min-width: 280px;
+    width: calc(280px + 1vw);
+    overflow-wrap: break-word;
+  }
 }

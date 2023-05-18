@@ -1,12 +1,11 @@
 import React, {useState} from "react";
-import Style from "./PersonalAccountPage.module.css";
-import {MyInputs} from "../../components/inputs/inputs";
-import {ButtonText} from "../../components/buttons/buttons";
 import {PageAuthorization} from "./PageAuthorization/PageAuthorization";
 import {PageRegistration} from "./PageRegistration/PageRegistration";
 import {PageConfirmationRegistration} from "./PageConfirmationRegistration/PageConfirmationRegistration";
 import {checkAccount} from "../../cookie";
 import {PageRecovery} from "./PageRecovery/PageRecovery";
+import {PageConfirmationRecovery} from "./PageConfirmationRecovery/PageConfirmationRecovery";
+import {PageNewPassword} from "./PageNewPassword/PageNewPassword";
 
 export const PersonalAccountPage = () => {
     const [StatusAccount, SetStatusAccount] = useState(checkAccount() === undefined ? 1 : 0);
@@ -29,11 +28,11 @@ export const PersonalAccountPage = () => {
                     )
                 case 5:
                     return (
-                        <></>
+                        <PageConfirmationRecovery func={() => SetStatusAccount(6)}/>
                     )
                 case 6:
                     return (
-                       <></>
+                       <PageNewPassword func={() => SetStatusAccount(0)}/>
                     )
                 case 1: default:
                     return (
@@ -43,7 +42,7 @@ export const PersonalAccountPage = () => {
         default:
             return (
                 <section>
-
+                    ЛК
                 </section>
             )
     }

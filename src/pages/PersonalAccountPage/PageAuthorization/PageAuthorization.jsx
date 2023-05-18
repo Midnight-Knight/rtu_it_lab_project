@@ -1,48 +1,53 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Style from "../PersonalAccountPage.module.css";
 import {MyInputs} from "../../../components/inputs/inputs";
 import {ButtonText} from "../../../components/buttons/buttons";
-import axios from "axios";
-import {setAccountCookie, getCookieExpiration} from "../../../cookie";
+import {Server} from "../../../Server";
 
 
-const API = async (email = "", password = "") => {
-    let response;
-    try {
-        const data = await axios.post('http://localhost:2999/authorization',{email: email, password: password});
-        if (data.data.response === true)
-        {
-            setAccountCookie(email, password, getCookieExpiration(3));
-        }
-        response = await data.data.response;
-    }
-    catch (e)
-    {
-        console.error(e);
-        response = false;
-    }
-    return response;
-}
+
 export const PageAuthorization = (props) => {
     const [Email, SetEmail] = useState("");
     const [Password, SetPassword] = useState("");
-    const [Error, SetError] = useState(false);
+    const [ErrorEmail, SetErrorEmail] = useState(false);
+    const [ErrorPassword, SetErrorPassword] = useState(false);
+    const [TextEmail, SetTextEmail] = useState("Введите свою электронную почту");
+    const [TextPassword, SetTextPassword] = useState("Введите свой пароль");
 
     const handleConfirmation = async () => {
-        const response = await API(Email, Password);
-        if (response === true) {
+        const response = await Server.authorization(Email, Password);
+        if (response.responseEmail === true && response.responsePassword === true) {
             props.funcAut();
         } else {
-            SetError(true);
+            if (response.responseEmail !== true)
+            {
+                SetErrorEmail(true);
+                SetTextEmail(response.responseEmail);
+            }
+            if (response.responsePassword !== true)
+            {
+                SetErrorPassword(true);
+                SetTextPassword(response.responsePassword);
+            }
         }
     };
+
+    useEffect(() => {
+        SetErrorEmail(false);
+        SetTextEmail("Введите свою электронную почту");
+    }, [Email])
+
+    useEffect(() => {
+        SetErrorPassword(false);
+        SetTextPassword("Введите свой пароль");
+    }, [Password])
 
     return (
         <section className={Style.Page}>
             <div className={Style.BlockAuthorization}>
                 <h3>Авторизация</h3>
-                <MyInputs active={Error} valueHeader="Почта" valueFooter="Введите свою электронную почту" change={(event) => SetEmail(event.target.value)} type={"email"}/>
-                <MyInputs active={Error} valueHeader="Пароль" valueFooter="Введите свой пароль" change={(event) => SetPassword(event.target.value)} type={"password"}/>
+                <MyInputs active={ErrorEmail} valueHeader="Почта" valueFooter={TextEmail} change={(event) => SetEmail(event.target.value)} type={"email"}/>
+                <MyInputs active={ErrorPassword} valueHeader="Пароль" valueFooter={TextPassword} change={(event) => SetPassword(event.target.value)} type={"password"}/>
                 <ButtonText widthAuto={true} text="Войти" func={() => handleConfirmation()}/>
                 <ButtonText widthAuto={true} text="Регистрация" func={props.funcReg}/>
                 <ButtonText widthAuto={true} text="Восстановление пароля" func={props.funcRec}/>
