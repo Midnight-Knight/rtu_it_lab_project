@@ -16,9 +16,9 @@ export const ButtonNavMenu = (props) => {
     )
 }
 
-export const ButtonAccount = () => {
+export const ButtonAccount = (props) => {
     return (
-        <a className={classNames(Style.Button, Style.ButtonAccount)} href="/">
+        <a className={classNames(Style.Button, Style.ButtonAccount)} href={props.href}>
         </a>
     )
 }

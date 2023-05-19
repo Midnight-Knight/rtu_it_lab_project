@@ -6,8 +6,9 @@ import {checkAccount} from "../../cookie";
 import {PageRecovery} from "./PageRecovery/PageRecovery";
 import {PageConfirmationRecovery} from "./PageConfirmationRecovery/PageConfirmationRecovery";
 import {PageNewPassword} from "./PageNewPassword/PageNewPassword";
+import {PageAccount} from "./PageAccount/PageAccount";
 
-export const PersonalAccountPage = () => {
+export const ControllerAccountPage = () => {
     const [StatusAccount, SetStatusAccount] = useState(checkAccount() === undefined ? 1 : 0);
     switch (checkAccount())
     {
@@ -41,9 +42,7 @@ export const PersonalAccountPage = () => {
             }
         default:
             return (
-                <section>
-                    ЛК
-                </section>
+                <PageAccount/>
             )
     }
 }

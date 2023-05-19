@@ -11,7 +11,8 @@ import {ArtPage} from "./pages/ArtPage/ArtPage";
 import {CitylifePage} from "./pages/CitylifePage/CitylifePage";
 import {FamilyPage} from "./pages/FamilyPage/FamilyPage";
 import {PageEvents} from "./pages/PageEvents/PageEvents";
-import {PersonalAccountPage} from "./pages/PersonalAccountPage/PersonalAccountPage";
+import {ControllerAccountPage} from "./pages/PersonalAccountPage/ControllerAccountPage";
+import {checkAccount} from "./cookie";
 
 const MemoizedHeader = memo(Header);
 const MemoizedFooter = memo(Footer);
@@ -34,10 +35,19 @@ function App(props) {
                   {['/', '/festivals', '/sport', '/exhibitions', '/art', '/citylife', '/family'].map((path) => (
                       <Route path={path} key={path} element={<MemoizedHeader />} />
                   ))}
+                  {
+                      props.account !== undefined ?
+                          <Route path={'/account'} key={'/account'} element={<MemoizedHeader />} /> :
+                          <Route path={'/account'} key={'/account'} element={<MemoizedHeader Animation={false} />} />
+                  }
               </Routes>
               <Routes>
-                  <Route path='test' element={<PersonalAccountPage/>}/>
-                  <Route path="/" element={<MemoizedMainPage festivals={props.festivals} art={props.art} sport={props.sport} family={props.family} citylife={props.citylife} exhibitions={props.exhibitions}/>} />
+                  <Route path='/account' element={<ControllerAccountPage/>}/>
+                  <Route path="/" element={<MemoizedMainPage festivals={props.festivals}
+                                                             art={props.art} sport={props.sport}
+                                                             family={props.family}
+                                                             citylife={props.citylife}
+                                                             exhibitions={props.exhibitions}/>} />
                   <Route path="/festivals" element={<MemoizedFestivalsPage festivals={props.festivals}/>} />
                   <Route path="/sport" element={<MemoizedSportPage sport={props.sport}/>} />
                   <Route path="/exhibitions" element={<MemoizedExhibitionsPage exhibitions={props.exhibitions}/>} />
@@ -64,7 +74,11 @@ function App(props) {
                   ))}
               </Routes>
               <Routes>
-                  <Route path="/test" element={<></>}/>
+                  {
+                      props.account !== undefined ?
+                          <Route path={'/account'} key={'/account'} element={<MemoizedFooter/>} /> :
+                          <Route path={'/account'} key={'/account'} element={<></>} />
+                  }
                   <Route path="*" element={<MemoizedFooter/>}/>
               </Routes>
           </div>

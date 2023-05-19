@@ -36,7 +36,7 @@ export const Header = (props) => {
                 <ButtonLogo/>
                 <div>
                     <ButtonNavMenu func={() => SetNavButtonClick(!NavButtonClick)}/>
-                    <ButtonAccount/>
+                    <ButtonAccount href={'/account'}/>
                 </div>
             </header>
             <nav className={classNames(Style.Nav,NavButtonClick === false ? Style.NavFalseClick : Style.NavTrueClick)}>

@@ -22,6 +22,11 @@ async function start()
     }
 
     const account = checkAccount();
+    let eventAccount;
+    if (account !== undefined)
+    {
+
+    }
     const festivals = await loadData("http://localhost:2999/api/get/festivals");
     const art = await loadData("http://localhost:2999/api/get/art");
     const sport = await loadData("http://localhost:2999/api/get/sports");
