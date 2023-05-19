@@ -29,22 +29,6 @@
   }
 }
 
-.ButtonAccount
-{
-  background-image: url("./../../image/account_circle.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 40px;
-  width: 40px;
-  background-color: rgba(0,0,0,0);
-  transition: 0.5s transform, 0.5s filter;
-  > &:hover
-  {
-    transform: scale(1.3);
-  }
-}
-
 .ButtonNavMenu
 {
   background-image: url("./../../image/view_headline.svg");
@@ -80,17 +64,6 @@
   }
 }
 
-.ButtonFilled
-{
-  background-color: $Blue;
-}
-
-.ButtonOutlined
-{
-  background-color: rgba(0,0,0,0);
-  border: 2px solid $DarkBlue;
-}
-
 .ButtonText
 {
   background-color: rgba(0,0,0);
@@ -103,15 +76,4 @@
   {
     filter: invert(100%);
   }
-}
-
-.ButtonElevated
-{
-  background-color: $LowWhite;
-  box-shadow: 0 0 2px 2px $BlackA05;
-}
-
-.ButtonTonal
-{
-  background-color: $White;
 }
