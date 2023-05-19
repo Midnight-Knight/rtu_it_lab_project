@@ -80,17 +80,6 @@
   }
 }
 
-.ButtonFilled
-{
-  background-color: $Blue;
-}
-
-.ButtonOutlined
-{
-  background-color: rgba(0,0,0,0);
-  border: 2px solid $DarkBlue;
-}
-
 .ButtonText
 {
   background-color: rgba(0,0,0);
@@ -103,15 +92,4 @@
   {
     filter: invert(100%);
   }
-}
-
-.ButtonElevated
-{
-  background-color: $LowWhite;
-  box-shadow: 0 0 2px 2px $BlackA05;
-}
-
-.ButtonTonal
-{
-  background-color: $White;
 }

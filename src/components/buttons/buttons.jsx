@@ -32,22 +32,6 @@ export const ButtonNav = (props) => {
     )
 }
 
-export const ButtonFilled = (props) => {
-    return (
-        <button className={classNames(Style.Button, Style.ButtonFilled)} onClick={props.func}>
-            <h6>{props.text}</h6>
-        </button>
-    )
-}
-
-export const ButtonOutlined = (props) => {
-    return (
-        <button className={classNames(Style.Button, Style.ButtonOutlined)} onClick={props.func}>
-            <h6>{props.text}</h6>
-        </button>
-    )
-}
-
 export const ButtonText = (props) => {
     return (
         <button className={classNames(props.widthAuto === true ? Style.ButtonWidthAuto : Style.Button, Style.ButtonText)} onClick={props.func}>
@@ -68,22 +52,6 @@ export const ButtonTextH4 = (props) => {
     return (
         <button className={classNames(props.widthAuto === true ? Style.ButtonWidthAuto : Style.Button, Style.ButtonText)} onClick={props.func}>
             <h4>{props.text}</h4>
-        </button>
-    )
-}
-
-export const ButtonElevated = (props) => {
-    return (
-        <button className={classNames(Style.Button, Style.ButtonElevated)} onClick={props.func}>
-            <h6>{props.text}</h6>
-        </button>
-    )
-}
-
-export const ButtonTonal = (props) => {
-    return (
-        <button className={classNames(Style.Button, Style.ButtonTonal)} onClick={props.func}>
-            <h6>{props.text}</h6>
         </button>
     )
 }
