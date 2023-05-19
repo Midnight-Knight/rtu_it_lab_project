@@ -1,12 +1,62 @@
 .PageEvent > section:nth-child(1) {
-  background-color: rgb(255, 255, 255);
+  position: relative;
+  background-size: cover;
+  background-position: left;
+  width: 100%;
   min-height: 100vh;
-  margin-top: 80px;
+  padding-top: 368px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-.PageEvent > section:nth-child(1) * {
+.PageEvent > section:nth-child(1):after {
+  content: "";
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.PageEvent > section:nth-child(1) > * {
+  z-index: 1;
+  color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(1) > h1 {
+  text-transform: uppercase;
+  max-width: 792px;
+}
+@media screen and (max-width: 480px) {
+  .PageEvent > section:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .PageEvent > section:nth-child(1) > h1 {
+    width: auto;
+    text-align: left;
+  }
+}
+.PageEvent > section:nth-child(2) {
+  background-color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(2) * {
   text-align: start;
 }
-.PageEvent > section:nth-child(2), .PageEvent > section:nth-child(3) {
+.PageEvent > section:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(3) > * {
+  color: rgb(14, 14, 14);
+}
+.PageEvent > section:nth-child(4) {
   background-color: rgb(14, 14, 14);
   display: flex;
   flex-direction: column;
@@ -14,14 +64,8 @@
   align-items: flex-start;
   min-height: 100vh;
 }
-.PageEvent > section:nth-child(2) > *, .PageEvent > section:nth-child(3) > * {
+.PageEvent > section:nth-child(4) > * {
   color: rgb(255, 255, 255);
-}
-.PageEvent > section:nth-child(3) {
-  background-color: rgb(255, 255, 255);
-}
-.PageEvent > section:nth-child(3) > * {
-  color: rgb(14, 14, 14);
 }
 
 .BlockNotification {

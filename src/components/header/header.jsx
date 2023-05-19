@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import Style from "./header.module.css";
-import {ButtonLogo, ButtonNavMenu, ButtonNav, ButtonAccount} from "../buttons/buttons";
+import {ButtonLogo, ButtonNavMenu, ButtonNav} from "../buttons/buttons";
 import classNames from "classnames";
 import FestivalsSvg from "./../../image/festivals_svg.svg";
 import SportSVG from "./../../image/sport_svg.svg";

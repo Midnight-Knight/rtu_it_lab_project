@@ -33,6 +33,24 @@ function App(props) {
                   {['/', '/festivals', '/sport', '/exhibitions', '/art', '/citylife', '/family'].map((path) => (
                       <Route path={path} key={path} element={<MemoizedHeader />} />
                   ))}
+                  {props.festivals.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
+                  {props.sport.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
+                  {props.exhibitions.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
+                  {props.art.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
+                  {props.citylife.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
+                  {props.family.map((elem) => (
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedHeader />}/>
+                  ))}
               </Routes>
               <Routes>
                   <Route path="/" element={<MemoizedMainPage festivals={props.festivals}

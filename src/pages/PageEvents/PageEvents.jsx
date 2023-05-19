@@ -1,4 +1,4 @@
-import React, {memo, useEffect} from "react";
+import React, {memo, useEffect, useMemo} from "react";
 import Style from "./PageEvents.module.css";
 import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
@@ -11,27 +11,27 @@ export const PageEvents = memo(({dataJSON}) => {
         const location = useLocation();
 
         useEffect(() => {
-            // Получение хеша из URL-адреса
             const hash = location.hash;
-
-            // Проверка, что хеш не пустой
             if (hash) {
-                // Поиск элемента с указанным ID, соответствующим хешу
                 const targetElement = document.querySelector(hash);
-
-                // Проверка, что элемент найден
                 if (targetElement) {
-                    // Выполнение прокрутки к элементу
                     targetElement.scrollIntoView();
                 }
             }
         }, [location]);
     const data = dataJSON;
 
+    const myImage=useMemo(() => ({
+        backgroundImage: `url(${data.image})`
+    }),[data.image])
+
     return (
         <section className={classNames(UnitedStyle.Page, Style.PageEvent)}>
-            <section>
+            <section style={myImage}>
                 <h1 className={Style.MarginB}>{data.Name}</h1>
+            </section>
+            <section>
+                <h1 className={Style.MarginB}>Мероприятие: {data.Name}</h1>
                 <h3 className={Style.MarginS}>Тип мероприятия: <span>{data.TypeEvent}</span></h3>
                 <h3 className={Style.MarginB}>Организатор: <span>{data.ResponsibleEvent}</span></h3>
                 <h3 className={Style.MarginS}>Статус мероприятия: <span>{data.Status === 0 ? "В ожидание начала" : (data.Status === 1 ? "В процессе" : "Завершено")}</span></h3>
@@ -42,6 +42,15 @@ export const PageEvents = memo(({dataJSON}) => {
                 <h3 className={Style.MarginB}>Локация: <span>{data.Location}</span></h3>
                 <h3>Описание: <span>{data.DescriptionEvent}</span></h3>
             </section>
+            <section id="stream">
+                <h1>Прямая траснляция мероприятия</h1>
+                {
+                    data.stream === false ? <div className={Style.BlockStream}><h1>Трансляция ещё не началась</h1></div> : <iframe className={Style.BlockStream} src={data.stream}
+                                                                                                                                   title="YouTube video player" frameBorder="0"
+                                                                                                                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                                                                                   allowFullScreen></iframe>
+                }
+            </section>
             <section>
                 <h1>Мероприятие на карте</h1>
                 {
@@ -51,15 +60,6 @@ export const PageEvents = memo(({dataJSON}) => {
                                 data.TypeEvent === 'Отдых с детьми' ? <MemoizedMap family={[data]} coordinates={data.coordinates}/> :
                                     data.TypeEvent === 'Спорт' ? <MemoizedMap sport={[data]} coordinates={data.coordinates}/> :
                                         <MemoizedMap festivals={[data]} coordinates={data.coordinates}/>
-                }
-            </section>
-            <section id="stream">
-                <h1>Прямая траснляция мероприятия</h1>
-                {
-                    data.stream === false ? <div className={Style.BlockStream}><h1>Трансляция ещё не началась</h1></div> : <iframe className={Style.BlockStream} src={data.stream}
-                                                             title="YouTube video player" frameBorder="0"
-                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                             allowFullScreen></iframe>
                 }
             </section>
         </section>
