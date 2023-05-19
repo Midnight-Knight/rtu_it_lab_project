@@ -12,6 +12,15 @@
   @include FlexColumnStartStart();
 }
 
+.ListBlockZero
+{
+  @include FlexRowCenterCenter();
+  > h1
+  {
+    color: $Black;
+  }
+}
+
 .ElementBlock
 {
   padding: 16px;

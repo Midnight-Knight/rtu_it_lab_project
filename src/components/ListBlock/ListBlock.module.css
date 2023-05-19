@@ -12,6 +12,16 @@
   align-items: flex-start;
 }
 
+.ListBlockZero {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.ListBlockZero > h1 {
+  color: rgb(14, 14, 14);
+}
+
 .ElementBlock {
   padding: 16px;
   width: 100%;

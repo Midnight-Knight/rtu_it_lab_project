@@ -112,8 +112,8 @@ export const ListBlock = (props) => {
 
 
     return (
-        <div className={Style.ListBlock}>
-            {List.map((elem) => elem)}
+        <div className={List.length !== 0 ? Style.ListBlock : classNames(Style.ListBlock, Style.ListBlockZero)}>
+            {List.length !== 0 ? List.map((elem) => elem) : <h1>Мероприятия отсутствуют</h1>}
         </div>
     )
 }

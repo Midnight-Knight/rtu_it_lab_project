@@ -141,16 +141,57 @@ export class Server {
         let response;
         try {
             const data = await axios.post(this.#url+'/event/add',{email: checkAccount().login, id: id});
-            if (data.data.response === true)
-            {
-
-            }
-            response = await data.data.checkPassword;
+            response = await data.data.response;
         }
         catch (e)
         {
             console.error(e);
             response = "Ошибка соединения";
+        }
+        return response;
+    }
+
+    static async delete(id)
+    {
+        let response;
+        try {
+            const data = await axios.post(this.#url+'/event/delete',{email: checkAccount().login, id: id});
+            response = await data.data.response;
+        }
+        catch (e)
+        {
+            console.error(e);
+            response = "Ошибка соединения";
+        }
+        return response;
+    }
+
+    static async get()
+    {
+        let response;
+        try {
+            const data = await axios.post(this.#url+'/event/get',{email: checkAccount().login});
+            response = await data.data;
+        }
+        catch (e)
+        {
+            console.error(e);
+            response = {response: "Ошибка соединения"};
+        }
+        return response;
+    }
+
+    static async id()
+    {
+        let response;
+        try {
+            const data = await axios.post(this.#url+'/event/id',{email: checkAccount().login});
+            response = await data.data;
+        }
+        catch (e)
+        {
+            console.error(e);
+            response = {response: "Ошибка соединения"};
         }
         return response;
     }

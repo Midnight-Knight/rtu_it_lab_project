@@ -4,6 +4,7 @@ import "./style/index.css";
 import App from './App';
 import axios from "axios";
 import {checkAccount} from "./cookie";
+import {Server} from "./Server";
 
 
 async function start()
@@ -25,7 +26,7 @@ async function start()
     let eventAccount;
     if (account !== undefined)
     {
-
+        eventAccount = Server.id();
     }
     const festivals = await loadData("http://localhost:2999/api/get/festivals");
     const art = await loadData("http://localhost:2999/api/get/art");
@@ -37,7 +38,7 @@ async function start()
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <App account={account} festivals={festivals} art={art} sport={sport} citylife={citylife} family={family} exhibitions={exhibitions}/>
+            <App eventAccount={eventAccount} account={account} festivals={festivals} art={art} sport={sport} citylife={citylife} family={family} exhibitions={exhibitions}/>
         </React.StrictMode>
     );
 }
