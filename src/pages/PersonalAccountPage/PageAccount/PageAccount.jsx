@@ -21,7 +21,7 @@ export const PageAccount = () => {
                     <h1>Уведомления</h1>
                     <div>
                         <h4>Уведомление на сайте</h4>
-                        <ButtonTextH4 text="Включить"/>
+                        <ButtonTextH4 text="Недоступно"/>
                     </div>
                     <div>
                         <h4>Уведомление по почте</h4>

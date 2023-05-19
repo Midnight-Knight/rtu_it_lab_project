@@ -4,10 +4,11 @@ import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {useLocation} from "react-router";
+import {ButtonTextH4} from "../../components/buttons/buttons";
 
 const MemoizedMap = memo(MyMap);
 
-export const PageEvents = memo(({dataJSON}) => {
+export const PageEvents = memo(({dataJSON, account}) => {
         const location = useLocation();
 
         useEffect(() => {
@@ -40,7 +41,8 @@ export const PageEvents = memo(({dataJSON}) => {
                 <h3 className={Style.MarginS}>Район: <span>{data.District}</span></h3>
                 <h3 className={Style.MarginS}>Адрес: <span>{data.Address}</span></h3>
                 <h3 className={Style.MarginB}>Локация: <span>{data.Location}</span></h3>
-                <h3>Описание: <span>{data.DescriptionEvent}</span></h3>
+                <h3 className={Style.MarginB}>Описание: <span>{data.DescriptionEvent}</span></h3>
+                {account === undefined ? <></> : <ButtonTextH4 text={"Добавить в мои мероприятия"}/>}
             </section>
             <section>
                 <h1>Мероприятие на карте</h1>

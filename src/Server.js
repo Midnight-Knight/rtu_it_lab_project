@@ -1,5 +1,5 @@
 import axios from "axios";
-import {getCookieExpiration, setAccountCookie} from "./cookie";
+import {checkAccount, getCookieExpiration, setAccountCookie} from "./cookie";
 
 export class Server {
     static #url = "http://localhost:2999";
@@ -134,5 +134,24 @@ export class Server {
         {
             return "Разные пароли";
         }
+    }
+
+    static async add(id)
+    {
+        let response;
+        try {
+            const data = await axios.post(this.#url+'/event/add',{email: checkAccount().login, id: id});
+            if (data.data.response === true)
+            {
+
+            }
+            response = await data.data.checkPassword;
+        }
+        catch (e)
+        {
+            console.error(e);
+            response = "Ошибка соединения";
+        }
+        return response;
     }
 }

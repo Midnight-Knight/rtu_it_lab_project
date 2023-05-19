@@ -55,22 +55,22 @@ function App(props) {
                   <Route path="/citylife" element={<MemoizedCitylifePage citylife={props.citylife}/>}/>
                   <Route path="/family" element={<MemoizedFamilyPage family={props.family}/>}/>
                   {props.festivals.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
                   {props.art.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
                   {props.sport.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
                   {props.family.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
                   {props.citylife.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
                   {props.exhibitions.map((elem) => (
-                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} />}/>
+                      <Route path={"/"+elem.ID} key={elem.TypeEvent+elem.ID} element={<MemoizedEventsPage dataJSON={elem} account={props.account}/>}/>
                   ))}
               </Routes>
               <Routes>
