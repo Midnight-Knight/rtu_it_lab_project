@@ -35,6 +35,19 @@
   }
 }
 
+.BlockNotification
+{
+  width: 100%;
+  @include FlexColumnStartStart();
+  gap: 16px;
+  > div
+  {
+    @include FlexRowStartStart();
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+}
+
 .BlockStream
 {
   width: 100%;

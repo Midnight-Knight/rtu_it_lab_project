@@ -24,6 +24,23 @@
   color: rgb(14, 14, 14);
 }
 
+.BlockNotification {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+}
+.BlockNotification > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
 .BlockStream {
   width: 100%;
   height: 70vh;
