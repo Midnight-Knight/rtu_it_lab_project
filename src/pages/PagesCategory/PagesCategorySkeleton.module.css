@@ -46,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.SectionOne > h2 {
+.SectionOne > h1 {
   width: 100%;
   text-align: left;
 }

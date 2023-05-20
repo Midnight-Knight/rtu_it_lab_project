@@ -45,7 +45,7 @@
   background-color: $White;
   height: auto;
   @include FlexColumnBetweenCenter();
-  > h2
+  > h1
   {
     width: 100%;
     text-align: left;

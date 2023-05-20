@@ -45,6 +45,42 @@
   }
 }
 
+.ButtonSearch
+{
+  width: 40px;
+  height: 40px;
+  @media screen and (max-width: 480px)
+  {
+    width: 32px;
+    height: 32px;
+  }
+  background-color: rgba(0,0,0,0);
+  background-image: url("./../../image/search.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include FlexColumnCenterCenter();
+  flex-shrink: 0;
+}
+
+.ButtonClose
+{
+  width: 40px;
+  height: 40px;
+  @media screen and (max-width: 480px)
+  {
+    width: 32px;
+    height: 32px;
+  }
+  background-color: rgba(0,0,0,0);
+  background-image: url("./../../image/close.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include FlexColumnCenterCenter();
+  flex-shrink: 0;
+}
+
 .ButtonNav
 {
   margin: 8px 74px;

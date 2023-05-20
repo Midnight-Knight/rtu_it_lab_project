@@ -53,7 +53,7 @@
         text-align: start;
       }
     }
-    > &:nth-child(3)
+    > &:nth-child(4)
     {
       @include FlexColumnBetweenStart();
       min-height: 100vh;
@@ -63,11 +63,48 @@
         color: $Black;
       }
     }
-    > &:nth-child(4)
+    > &:nth-child(3)
     {
       background-color: $Black;
       @include FlexColumnBetweenStart();
       min-height: 100vh;
+      > *
+      {
+        color: $White;
+      }
+    }
+    > &:nth-child(5)
+    {
+      background-color: $Black;
+      @include FlexColumnBetweenStart();
+      > div
+      {
+        width: 100%;
+        @include FlexRowBetweenStart();
+        flex-wrap: wrap;
+        gap: 32px;
+        > div
+        {
+          min-width: 288px;
+          gap: 24px;
+          background-color: $BlackGray;
+          border-radius: 16px;
+          padding: 24px;
+          box-shadow: 0 0 16px 8px $GrayA05;
+          > &:nth-child(1)
+          {
+            @include FlexColumnStartStart();
+          }
+          > &:nth-child(2)
+          {
+            @include FlexColumnStartEnd();
+            h3
+            {
+              text-align: right;
+            }
+          }
+        }
+      }
       > *
       {
         color: $White;

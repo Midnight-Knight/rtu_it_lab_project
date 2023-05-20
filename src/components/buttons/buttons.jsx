@@ -16,6 +16,18 @@ export const ButtonNavMenu = (props) => {
     )
 }
 
+export const ButtonSearch = (props) => {
+    return (
+        <button className={Style.ButtonSearch} onClick={props.func}></button>
+    )
+}
+
+export const ButtonClose = (props) => {
+    return (
+        <button className={Style.ButtonClose} onClick={props.func}></button>
+    )
+}
+
 export const ButtonNav = (props) => {
     return (
         <a className={classNames(Style.Button, Style.ButtonText, Style.ButtonNav)} href={props.href}>

@@ -1,7 +1,8 @@
-import React, {useMemo} from "react";
+import React, {useMemo, useState} from "react";
 import Style from "./ListBlock.module.css";
 import {ButtonTextLink} from "../buttons/buttons";
 import classNames from "classnames";
+import {InputWhite} from "../input/input";
 
 const ElementBlock = (props) => {
 
@@ -58,17 +59,37 @@ const ElementBlock = (props) => {
     )
 }
 
-const CreateList = (array) => {
+const CreateList = (array,searchValue) => {
     const buffer = [];
     if (array !== undefined) {
-        for (let i = 0; i < 3; ++i) {
-            for (let j = 0; j < array.length; ++j) {
-                if (i === 0 && array[j].Status === 1) {
-                    buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
-                } else if (i === 1 && array[j].Status === 0) {
-                    buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
-                } else if (i === 2 && array[j].Status === 2) {
-                    buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+        if (searchValue.trim() === "") {
+            for (let i = 0; i < 3; ++i) {
+                for (let j = 0; j < array.length; ++j) {
+                    if (i === 0 && array[j].Status === 1) {
+                        buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                    } else if (i === 1 && array[j].Status === 0) {
+                        buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                    } else if (i === 2 && array[j].Status === 2) {
+                        buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                    }
+                }
+            }
+        }
+        else
+        {
+            const searchQuery = searchValue.toLowerCase();
+            for (let i = 0; i < 3; ++i) {
+                for (let j = 0; j < array.length; ++j) {
+                    const eventName = array[j].Name.toLowerCase();
+                    if (eventName.includes(searchQuery)) {
+                        if (i === 0 && array[j].Status === 1) {
+                            buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                        } else if (i === 1 && array[j].Status === 0) {
+                            buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                        } else if (i === 2 && array[j].Status === 2) {
+                            buffer.push(<ElementBlock key={"ElementList" + array[j].ID} event={array[j]}/>);
+                        }
+                    }
                 }
             }
         }
@@ -77,6 +98,8 @@ const CreateList = (array) => {
 }
 
 export const ListBlock = (props) => {
+    const [searchValue, setSearchValue] = useState("");
+
     const List = useMemo(() =>
         {
             let UnitedArray = [];
@@ -104,16 +127,19 @@ export const ListBlock = (props) => {
             {
                 UnitedArray = [...UnitedArray, ...props.family];
             }
-            return CreateList(UnitedArray)
+            return CreateList(UnitedArray, searchValue)
         }
-    ,[props.festivals, props.art, props.citylife, props.sport, props.family, props.exhibitions]);
+    ,[props.festivals, props.art, props.citylife, props.sport, props.family, props.exhibitions, searchValue]);
 
 
 
 
     return (
         <div className={Style.ListBlock}>
-            {List.map((elem) => elem)}
+            <InputWhite value={searchValue} funcValue={(e) => setSearchValue(e.target.value)} closeValue={() => setSearchValue("")}/>
+            <div className={List.length !== 0 ? Style.ListZone : classNames(Style.ListZone, Style.ListCenter)}>
+                {List.length !== 0 ? List.map((elem) => elem) : <h1>Мероприятия отсутствуют</h1>}
+            </div>
         </div>
     )
 }

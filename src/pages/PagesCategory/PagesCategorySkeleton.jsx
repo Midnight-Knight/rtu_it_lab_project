@@ -14,7 +14,7 @@ export const PagesCategorySkeleton = (props) => {
                 <h1>{props.HelloSection.h1}</h1>
             </section>
             <section className={Style.SectionOne}>
-                <h2>{props.SectionOne.h2}</h2>
+                <h1>{props.SectionOne.h2}</h1>
                 <div>
                     <div>
                         <img alt="" src={props.SectionOne.image1}/>
@@ -27,7 +27,7 @@ export const PagesCategorySkeleton = (props) => {
                 </div>
             </section>
             <section className={Style.SectionTwo}>
-                <h2>Интерактивная карта</h2>
+                <h1>Интерактивная карта</h1>
                 <h5>{props.SectionTwo.h5}</h5>
                 <MemoizedMyMap festivals={props.festivals}
                                sport={props.sport}
@@ -37,7 +37,7 @@ export const PagesCategorySkeleton = (props) => {
                                art={props.art}/>
             </section>
             <section className={Style.SectionThree}>
-                <h2>Список мероприятий</h2>
+                <h1>Список мероприятий</h1>
                 <MemoizedListBlock festivals={props.festivals}
                                    sport={props.sport}
                                    exhibitions={props.exhibitions}

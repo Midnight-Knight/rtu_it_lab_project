@@ -3,14 +3,32 @@
 .ListBlock
 {
   width: 100%;
-  height: 70vh;
-  overflow-y: overlay;
+  overflow: hidden;
   border-radius: 16px;
   box-shadow: 0 0 16px 8px $GrayWhiteA05;
   background-color: $White;
-  overflow-x: hidden;
   gap: 2px;
   @include FlexColumnStartStart();
+}
+
+.ListZone
+{
+  width: 100%;
+  height: 70vh;
+  gap: 2px;
+  @include FlexColumnStartStart();
+  overflow-x: hidden;
+  overflow-y: overlay;
+}
+
+.ListCenter
+{
+  @include FlexColumnCenterCenter();
+  > *
+  {
+    color: $Black;
+    text-align: center;
+  }
 }
 
 .ElementBlock

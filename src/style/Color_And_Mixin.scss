@@ -11,6 +11,7 @@ $BlackBlackout: rgba(0,0,0,0.4);
 $BlackGray: rgba(31,31,31,1);
 $LowBlue: rgb(128, 163, 255);
 $MiddleBlue: rgb(72, 123, 255);
+$BlueInput: rgb(0,122,255);
 $DarkBlue: rgba(46,52,66,1);
 $DarkBlueA05: rgba(46,52,66,0.5);
 $Red: rgba(224,27,27,1);
@@ -107,6 +108,14 @@ $Hover: rgba(103,80,164,0.3);
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+@mixin FlexColumnStartEnd()
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 @mixin FlexColumnBetweenCenter()

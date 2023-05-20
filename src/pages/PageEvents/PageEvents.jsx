@@ -4,6 +4,8 @@ import UnitedStyle from "./../PageStyle.module.css";
 import classNames from "classnames";
 import {MyMap} from "../../components/MyMap/MyMap";
 import {useLocation} from "react-router";
+import {InputBlack} from "../../components/input/input";
+import {ButtonTextH4} from "../../components/buttons/buttons";
 
 const MemoizedMap = memo(MyMap);
 
@@ -42,15 +44,6 @@ export const PageEvents = memo(({dataJSON}) => {
                 <h3 className={Style.MarginB}>Локация: <span>{data.Location}</span></h3>
                 <h3>Описание: <span>{data.DescriptionEvent}</span></h3>
             </section>
-            <section id="stream">
-                <h1>Прямая траснляция мероприятия</h1>
-                {
-                    data.stream === false ? <div className={Style.BlockStream}><h1>Трансляция ещё не началась</h1></div> : <iframe className={Style.BlockStream} src={data.stream}
-                                                                                                                                   title="YouTube video player" frameBorder="0"
-                                                                                                                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                                                                                   allowFullScreen></iframe>
-                }
-            </section>
             <section>
                 <h1>Мероприятие на карте</h1>
                 {
@@ -61,6 +54,39 @@ export const PageEvents = memo(({dataJSON}) => {
                                     data.TypeEvent === 'Спорт' ? <MemoizedMap sport={[data]} coordinates={data.coordinates}/> :
                                         <MemoizedMap festivals={[data]} coordinates={data.coordinates}/>
                 }
+            </section>
+            <section id="stream">
+                <h1>Прямая траснляция мероприятия</h1>
+                {
+                    data.stream === false ? <div className={Style.BlockStream}><h1>Трансляция ещё не началась</h1></div> : <iframe className={Style.BlockStream} src={data.stream}
+                                                                                                                                   title="YouTube video player" frameBorder="0"
+                                                                                                                                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                                                                                   allowFullScreen></iframe>
+                }
+            </section>
+            <section>
+                <h1>Оповещение о начале мероприятия</h1>
+                <h4>Система автоматического оповещения предупредит вас о начале мероприятия за неделю и за день до начала</h4>
+                <div>
+                    <div>
+                        <h3>Уведомление по почте</h3>
+                        <h4>Почта</h4>
+                        <InputBlack/>
+                        <ButtonTextH4 text="Отправить код"/>
+                        <h4>Код подтверждения</h4>
+                        <InputBlack/>
+                        <ButtonTextH4 text="Подключить"/>
+                    </div>
+                    <div>
+                        <h3>Уведомление по SMS</h3>
+                        <h4>Номер телефона</h4>
+                        <InputBlack/>
+                        <ButtonTextH4 text="Недоступно"/>
+                        <h4>Код подтверждения</h4>
+                        <InputBlack/>
+                        <ButtonTextH4 text="Недоступно"/>
+                    </div>
+                </div>
             </section>
         </section>
     )
