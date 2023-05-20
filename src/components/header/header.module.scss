@@ -17,7 +17,7 @@
   top: 0;
   z-index: 10;
   @include FlexRowBetweenCenter();
-  transition: 0.5s background-color;
+  transition: 0.5s background-color, 0.5s box-shadow;
 
   *
   {
@@ -35,7 +35,8 @@
 
 .HeaderBackgroundDark
 {
-  background-color: rgba(0,0,0,1);
+  background-color: rgba(0,0,0,0);
+  box-shadow: none;
   *
   {
     color: $White;
@@ -49,6 +50,7 @@
 .HeaderBackgroundBlack
 {
   background-color: rgba(0,0,0,0);
+  box-shadow: none;
   *
   {
     color: $White;
@@ -62,6 +64,7 @@
 .HeaderBackgroundWhite
 {
   background-color: $White;
+  box-shadow: 0 0 16px 8px $BlackA05;
   *
   {
     color: $Black;

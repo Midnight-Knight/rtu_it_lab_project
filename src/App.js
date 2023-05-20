@@ -11,7 +11,6 @@ import {ArtPage} from "./pages/ArtPage/ArtPage";
 import {CitylifePage} from "./pages/CitylifePage/CitylifePage";
 import {FamilyPage} from "./pages/FamilyPage/FamilyPage";
 import {PageEvents} from "./pages/PageEvents/PageEvents";
-
 const MemoizedHeader = memo(Header);
 const MemoizedFooter = memo(Footer);
 const MemoizedMainPage = memo(MainPage);

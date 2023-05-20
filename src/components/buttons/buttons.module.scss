@@ -69,6 +69,7 @@
   background-color: rgba(0,0,0);
   color: $White;
   border-radius: 4px;
+  box-shadow: 0 0 4px 2px $BlackA05;
   filter: invert(0%);
   transition: 0.5s filter;
   text-decoration: none;

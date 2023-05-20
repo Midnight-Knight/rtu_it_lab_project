@@ -6,9 +6,10 @@
   height: 70vh;
   overflow-y: overlay;
   border-radius: 16px;
+  box-shadow: 0 0 16px 8px $GrayWhiteA05;
   background-color: $White;
   overflow-x: hidden;
-  gap: 6px;
+  gap: 2px;
   @include FlexColumnStartStart();
 }
 
@@ -52,6 +53,7 @@
   @include FlexColumnCenterCenter();
   border-radius: 96px;
   background-color: $Black;
+  box-shadow: 0 0 4px 2px $BlackA05;
   width: 96px;
   height: 96px;
   background-size: 70%;
