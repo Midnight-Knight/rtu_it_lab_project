@@ -51,7 +51,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 100vh;
+  gap: 32px;
 }
 .PageEvent > section:nth-child(3) > * {
   color: rgb(255, 255, 255);
@@ -61,7 +61,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  min-height: 100vh;
+  gap: 32px;
   background-color: rgb(255, 255, 255);
 }
 .PageEvent > section:nth-child(4) > * {
@@ -127,6 +127,13 @@
   align-items: center;
   box-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.5);
   background-color: rgb(215, 216, 232);
+}
+.BlockStream > * {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .MarginS {
