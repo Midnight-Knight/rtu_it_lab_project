@@ -1,6 +1,6 @@
 {
   "name": "rtu_lab_project",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@pbe/react-yandex-maps": "^1.2.4",

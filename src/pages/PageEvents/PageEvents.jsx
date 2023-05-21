@@ -92,6 +92,8 @@ export const PageEvents = memo(({dataJSON}) => {
                                 allowFullScreen></iframe>
                 }
             </section>
+            {
+                (data.Status === 0) ?
             <section>
                 <h1>Уведомления о начале мероприятия</h1>
                 <h4>Вы будете получать уведомления по электронной почте ежедневно точно в 12 часов дня, за день и за неделю до начала мероприятия.</h4>
@@ -104,7 +106,8 @@ export const PageEvents = memo(({dataJSON}) => {
                         <ButtonTextH4 text="Подключить" func={() => handleCode(ValueEmail)}/>
                     </div>
                 </div>
-            </section>
+            </section> : <></>
+            }
         </section>
     )
 }

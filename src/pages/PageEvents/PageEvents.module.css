@@ -45,17 +45,6 @@
 .PageEvent > section:nth-child(2) * {
   text-align: start;
 }
-.PageEvent > section:nth-child(4) {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  min-height: 100vh;
-  background-color: rgb(255, 255, 255);
-}
-.PageEvent > section:nth-child(4) > * {
-  color: rgb(14, 14, 14);
-}
 .PageEvent > section:nth-child(3) {
   background-color: rgb(14, 14, 14);
   display: flex;
@@ -66,6 +55,17 @@
 }
 .PageEvent > section:nth-child(3) > * {
   color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(4) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+.PageEvent > section:nth-child(4) > * {
+  color: rgb(14, 14, 14);
 }
 .PageEvent > section:nth-child(5) {
   background-color: rgb(14, 14, 14);

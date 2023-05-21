@@ -53,16 +53,6 @@
         text-align: start;
       }
     }
-    > &:nth-child(4)
-    {
-      @include FlexColumnBetweenStart();
-      min-height: 100vh;
-      background-color: $White;
-      > *
-      {
-        color: $Black;
-      }
-    }
     > &:nth-child(3)
     {
       background-color: $Black;
@@ -71,6 +61,16 @@
       > *
       {
         color: $White;
+      }
+    }
+    > &:nth-child(4)
+    {
+      @include FlexColumnBetweenStart();
+      min-height: 100vh;
+      background-color: $White;
+      > *
+      {
+        color: $Black;
       }
     }
     > &:nth-child(5)
