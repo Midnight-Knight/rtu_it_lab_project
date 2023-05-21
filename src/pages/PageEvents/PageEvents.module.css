@@ -78,7 +78,7 @@
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 32px;
@@ -90,21 +90,10 @@
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 0 16px 8px rgba(127, 127, 127, 0.5);
-}
-.PageEvent > section:nth-child(5) > div > div:nth-child(1) {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-}
-.PageEvent > section:nth-child(5) > div > div:nth-child(2) {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-}
-.PageEvent > section:nth-child(5) > div > div:nth-child(2) h3 {
-  text-align: right;
 }
 .PageEvent > section:nth-child(5) > * {
   color: rgb(255, 255, 255);

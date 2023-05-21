@@ -80,7 +80,7 @@
       > div
       {
         width: 100%;
-        @include FlexRowBetweenStart();
+        @include FlexRowStartStart();
         flex-wrap: wrap;
         gap: 32px;
         > div
@@ -91,18 +91,7 @@
           border-radius: 16px;
           padding: 24px;
           box-shadow: 0 0 16px 8px $GrayA05;
-          > &:nth-child(1)
-          {
-            @include FlexColumnStartStart();
-          }
-          > &:nth-child(2)
-          {
-            @include FlexColumnStartEnd();
-            h3
-            {
-              text-align: right;
-            }
-          }
+          @include FlexColumnStartStart();
         }
       }
       > *

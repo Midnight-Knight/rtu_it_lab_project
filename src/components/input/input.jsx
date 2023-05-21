@@ -8,7 +8,7 @@ export const InputWhite = (props) => {
         <div className={classNames(Style.Input, Style.White)}>
             <div>
                 <ButtonSearch/>
-                <input type="text" value={props.value} onChange={props.funcValue}/>
+                <input type={props.type} value={props.value} onChange={props.funcValue}/>
                 <ButtonClose func={props.closeValue}/>
             </div>
         </div>
@@ -19,7 +19,7 @@ export const InputBlack = (props) => {
     return (
         <div className={classNames(Style.Input, Style.Black)}>
             <div>
-                <input type="text" value={props.value} onChange={props.funcValue}/>
+                <input type={props.type} value={props.value} onChange={props.funcValue}/>
                 <ButtonClose func={props.closeValue}/>
             </div>
         </div>

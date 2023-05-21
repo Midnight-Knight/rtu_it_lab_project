@@ -136,7 +136,7 @@ export const ListBlock = (props) => {
 
     return (
         <div className={Style.ListBlock}>
-            <InputWhite value={searchValue} funcValue={(e) => setSearchValue(e.target.value)} closeValue={() => setSearchValue("")}/>
+            <InputWhite type={"text"} value={searchValue} funcValue={(e) => setSearchValue(e.target.value)} closeValue={() => setSearchValue("")}/>
             <div className={List.length !== 0 ? Style.ListZone : classNames(Style.ListZone, Style.ListCenter)}>
                 {List.length !== 0 ? List.map((elem) => elem) : <h1>Мероприятия отсутствуют</h1>}
             </div>
