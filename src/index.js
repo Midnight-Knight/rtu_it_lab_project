@@ -24,13 +24,13 @@ async function start()
     const art = await loadData("http://localhost:2999/api/get/art");
     const sport = await loadData("http://localhost:2999/api/get/sports");
     const citylife = await loadData("http://localhost:2999/api/get/citylife");
-    const family = await loadData("http://localhost:2999/api/get/family");
+    const family = await loadData(""); //"http://localhost:2999/api/get/family"
     const exhibitions = await loadData("http://localhost:2999/api/get/exhibitions");
 
     const root = ReactDOM.createRoot(document.getElementById('root'));
     root.render(
         <React.StrictMode>
-            <App festivals={festivals} art={art} sport={sport} citylife={citylife} family={family} exhibitions={exhibitions}/>
+            <App festivals={festivals} art={art} sport={sport} citylife={family} family={family} exhibitions={family}/>
         </React.StrictMode>
     );
 }

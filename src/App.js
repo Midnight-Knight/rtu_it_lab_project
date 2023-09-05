@@ -25,7 +25,7 @@ const MemoizedEventsPage = memo(PageEvents);
 function App(props) {
 
   return (
-      <BrowserRouter>
+      {/* <BrowserRouter>
           <div className="App">
               <Routes>
                   <Route path="*" element={<MemoizedHeader Animation={false}/>}/>
@@ -86,7 +86,7 @@ function App(props) {
                   <Route path="*" element={<MemoizedFooter/>}/>
               </Routes>
           </div>
-      </BrowserRouter>
+      </BrowserRouter> */}
   );
 }
 

@@ -6,9 +6,9 @@ import {MyMap} from "../../components/MyMap/MyMap";
 import {Category} from "../../components/Cards/Cards";
 import {ListBlock} from "../../components/ListBlock/ListBlock";
 
-const MemoizedMyMap = memo(MyMap);
+/*const MemoizedMyMap = memo(MyMap);
 const MemoizedCategory = memo(Category);
-const MemoizedListBlock = memo(ListBlock);
+const MemoizedListBlock = memo(ListBlock);*/
 export const MainPage = (props) => {
 
     return (
